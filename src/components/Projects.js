@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   const projectList = [
@@ -46,10 +47,23 @@ const Projects = () => {
 
   return (
     <section className="projects" id="projects">
-      <h2>Featured Projects</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        Featured Projects
+      </motion.h2>
+
       <div className="project-grid">
         {projectList.map((proj, index) => (
-          <div className="project-card" key={index}>
+          <motion.div 
+            className="project-card" key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
             <h3>{proj.title}</h3>
             <p>{proj.desc}</p>
             <div className="tech-stack">
@@ -62,7 +76,7 @@ const Projects = () => {
               <a href={proj.watch} target="_blank" rel="noreferrer" className="btn-secondary">Watch Online</a>
               <a href={proj.code} target="_blank" rel="noreferrer" className="btn-secondary">View Code</a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
