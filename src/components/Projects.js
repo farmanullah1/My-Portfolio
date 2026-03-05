@@ -17,6 +17,30 @@ const Projects = () => {
       live: "#",
       code: "https://github.com/farmanullah1/Gadd-Kaam-SkillSwap-Pakistan",
       watch: "#"
+    },
+    {
+      title: "⚙️ ASP.NET Core Web API",
+      desc: "A robust backend REST API demonstrating efficient Create, Read, Update, and Delete operations built with modern C# and ASP.NET Core.",
+      tech: ["C#", "ASP.NET Core", "Web API"],
+      live: "#",
+      code: "https://github.com/farmanullah1/CRUD-App-Using-ASP-Core-Web-API",
+      watch: "#"
+    },
+    {
+      title: "✊🖐️✌️ Stone, Paper, Scissors",
+      desc: "An interactive, browser-based Stone, Paper & Scissors game featuring dynamic UI updates and classic game logic.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      live: "https://farmanullah1.github.io/Stone-Paper-Scissors-Game-HTML-CSS-JS/",
+      code: "https://github.com/farmanullah1/Stone-Paper-Scissors-Game-HTML-CSS-JS",
+      watch: "#"
+    },
+    {
+      title: "❌⭕ Tic-Tac-Toe",
+      desc: "A classic Tic-Tac-Toe web game featuring responsive design and state management for turn-based gameplay.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      live: "https://farmanullah1.github.io/Tic-Tac-Toe-HTML-CSS-JS/",
+      code: "https://github.com/farmanullah1/Tic-Tac-Toe-HTML-CSS-JS",
+      watch: "#"
     }
   ];
 
@@ -32,7 +56,9 @@ const Projects = () => {
               {proj.tech.map((t, i) => <span key={i}>{t}</span>)}
             </div>
             <div className="project-links">
-              <a href={proj.live} target="_blank" rel="noreferrer" className="btn-secondary">Live Demo</a>
+              {proj.live !== "#" && (
+                <a href={proj.live} target="_blank" rel="noreferrer" className="btn-secondary">Live Demo</a>
+              )}
               <a href={proj.watch} target="_blank" rel="noreferrer" className="btn-secondary">Watch Online</a>
               <a href={proj.code} target="_blank" rel="noreferrer" className="btn-secondary">View Code</a>
             </div>
