@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f172a; /* Deep modern navy/black */
+  background-color: #0f172a; 
   color: #f8fafc;
   line-height: 1.6;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 .logo {
-  color: #38bdf8; /* Bright tech blue */
+  color: #38bdf8;
   font-size: 1.8rem;
   letter-spacing: 1px;
 }
@@ -51,9 +51,7 @@ body {
 }
 
 /* Typography & Buttons */
-.highlight {
-  color: #38bdf8;
-}
+.highlight { color: #38bdf8; }
 
 .btn-primary, .btn-secondary {
   display: inline-block;
@@ -63,6 +61,7 @@ body {
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -81,6 +80,7 @@ body {
   color: #38bdf8;
   font-size: 0.9rem;
   padding: 8px 16px;
+  background: transparent;
 }
 
 .btn-secondary:hover {
@@ -98,14 +98,17 @@ section h2 {
   margin-bottom: 50px;
   font-size: 2.2rem;
   color: #f8fafc;
+  text-align: center;
 }
 
 /* Hero Section */
 .hero {
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid #1e293b;
+  gap: 40px;
 }
 
 .hero-content h1 {
@@ -121,11 +124,50 @@ section h2 {
   font-weight: 400;
 }
 
-.hero-content p {
-  max-width: 600px;
-  color: #cbd5e1;
-  font-size: 1.1rem;
-  margin-bottom: 40px;
+.hero-image img {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about { text-align: center; }
+.about p { max-width: 800px; margin: 0 auto 30px auto; color: #cbd5e1; font-size: 1.1rem; }
+.about-buttons { display: flex; justify-content: center; gap: 20px; }
+
+/* Skills Section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-badge {
+  background-color: #1e293b;
+  color: #38bdf8;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid #334155;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.skill-badge:hover {
+  transform: translateY(-3px);
+  background-color: #334155;
+  border-color: #38bdf8;
 }
 
 /* Projects Grid */
@@ -141,6 +183,8 @@ section h2 {
   border-radius: 12px;
   transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -149,17 +193,8 @@ section h2 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.project-card h3 {
-  margin-bottom: 15px;
-  color: #f8fafc;
-  font-size: 1.4rem;
-}
-
-.project-card p {
-  color: #94a3b8;
-  margin-bottom: 25px;
-  font-size: 1rem;
-}
+.project-card h3 { margin-bottom: 15px; color: #f8fafc; font-size: 1.4rem; }
+.project-card p { color: #94a3b8; margin-bottom: 25px; font-size: 1rem; flex-grow: 1; }
 
 .tech-stack {
   display: flex;
@@ -177,23 +212,35 @@ section h2 {
   font-weight: 500;
 }
 
-/* Contact Section */
-.contact {
-  text-align: center;
-}
-
-.contact p {
-  color: #cbd5e1;
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-}
-
-.social-links {
+.project-links {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
+/* Why Me Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #334155;
+}
+
+.feature-card h3 { color: #f8fafc; margin-bottom: 15px; }
+.feature-card p { color: #94a3b8; }
+
+/* Contact Section */
+.contact { text-align: center; border-bottom: none; }
+.contact p { color: #cbd5e1; margin-bottom: 40px; font-size: 1.1rem; }
+
+.social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 .social-links a {
   color: #0f172a;
   background-color: #f8fafc;
@@ -210,22 +257,16 @@ section h2 {
 }
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: 40px 0;
-  color: #64748b;
-  font-size: 0.9rem;
-}
+footer { text-align: center; padding: 40px 0; color: #64748b; font-size: 0.9rem; }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.8rem;
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 50px;
   }
-  .hero-content h3 {
-    font-size: 1.3rem;
-  }
-  .nav-links {
-    gap: 15px;
-  }
+  .hero-content h1 { font-size: 2.8rem; }
+  .hero-image img { width: 220px; height: 220px; }
+  .nav-links { display: none; /* Consider adding a hamburger menu here for mobile later */ }
 }
