@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// Import the PDF file from your assets folder
 import cvFile from '../assets/Farmanullah Ansari CV - All.pdf';
 
 const About = () => {
@@ -18,9 +17,9 @@ const About = () => {
         With a strong foundation in modern frameworks and scalable architectures, I engineer seamless digital experiences that solve real-world problems.
       </p>
       <div className="about-buttons">
-        {/* Pass the imported file to the href attribute */}
-        <a href={cvFile} target="_blank" rel="noreferrer" className="btn-primary">
-          My CV
+        {/* 'download' attribute forces the browser to save the file */}
+        <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-primary">
+          Download My CV
         </a>
         <a href="#contact" className="btn-secondary">
           Hire Me
