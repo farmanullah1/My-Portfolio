@@ -21,24 +21,26 @@ const Hero = () => {
         </motion.h1>
         
         <motion.h1
+          className='hero-greeting'
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          Hi, I'm <span className='highlight'>Farmanullah Ansari</span> 👋
+          Hi, I'm &lt;/&gt; <br/> 
+          <span className='hero-name highlight'>Farmanullah Ansari</span>
         </motion.h1>
         
         <motion.h3
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
           Full-Stack Software Developer
         </motion.h3>
         
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
           I specialize in building dynamic, user-friendly, and scalable web
@@ -47,7 +49,8 @@ const Hero = () => {
         </motion.p>
         
         <motion.a 
-          href='#contact' className='btn-primary'
+          href='#contact' 
+          className='btn-primary hero-btn'
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8 }}
@@ -58,9 +61,9 @@ const Hero = () => {
 
       <motion.div 
         className='hero-image'
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.4, duration: 0.6, type: "spring", stiffness: 100 }}
+        initial={{ opacity: 0, scale: 0.5, x: 50 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{ delay: 0.4, duration: 0.8, type: "spring", stiffness: 100 }}
       >
         <img src={profilePic} alt='Farmanullah Ansari' />
       </motion.div>

@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaDocker, FaPython, FaAws, FaLinux, FaGithub } from 'react-icons/fa';
 import { SiMongodb, SiKubernetes, SiTerraform } from 'react-icons/si';
-import { TbBrandCSharp } from "react-icons/tb"; // Reliable C# Icon
-import { BiNetworkChart } from "react-icons/bi"; // Used as a clean icon for .NET / Web APIs
-import { BsBarChartFill } from "react-icons/bs"; // Perfect generic icon for Power BI
+import { TbBrandCSharp } from "react-icons/tb"; 
+import { BiNetworkChart } from "react-icons/bi"; 
+import { BsBarChartFill } from "react-icons/bs"; 
 
 const Skills = () => {
   const skills = [
@@ -23,19 +23,6 @@ const Skills = () => {
     { name: "Power BI", icon: <BsBarChartFill /> }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 } 
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   return (
     <section className="skills" id="skills">
       <motion.h2
@@ -47,18 +34,21 @@ const Skills = () => {
       </motion.h2>
       
       <motion.div 
-        className="skills-container"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        className="marquee-container"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8 }}
       >
-        {skills.map((skill, index) => (
-          <motion.span key={index} className="skill-badge" variants={itemVariants}>
-            <span className="skill-icon">{skill.icon}</span>
-            {skill.name}
-          </motion.span>
-        ))}
+        <div className="marquee-track">
+          {/* We render the list twice to create a seamless infinite scroll loop */}
+          {[...skills, ...skills].map((skill, index) => (
+            <div key={index} className="skill-card-scroll">
+              <div className="skill-icon-large">{skill.icon}</div>
+              <p className="skill-name">{skill.name}</p>
+            </div>
+          ))}
+        </div>
       </motion.div>
     </section>
   );
