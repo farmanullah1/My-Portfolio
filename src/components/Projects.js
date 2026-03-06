@@ -5,6 +5,14 @@ const Projects = () => {
   const [filter, setFilter] = useState('All');
 
   const projectList = [
+      {
+        title: "🤝 Gadd Kaam - SkillSwap Pakistan",
+        desc: "A comprehensive, secure platform for cashless skill exchanging across Pakistan, featuring CNIC verification, real-time trading, and a dedicated safe zone for women.",
+        tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
+        live: "",
+        code: "https://github.com/farmanullah1/Gadd-Kaam-SkillSwap-Pakistan",
+        watch: ""
+      },
     {
       title: "📰 Kurrent News",
       desc: "A real-time global news SPA featuring a highly robust Triple-API fallback architecture to ensure 100% deployment uptime, infinite scrolling, and dark mode.",
@@ -14,11 +22,11 @@ const Projects = () => {
       watch: ""
     },
     {
-      title: "🤝 Gadd Kaam - SkillSwap Pakistan",
-      desc: "A comprehensive, secure platform for cashless skill exchanging across Pakistan, featuring CNIC verification, real-time trading, and a dedicated safe zone for women.",
-      tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
-      live: "",
-      code: "https://github.com/farmanullah1/Gadd-Kaam-SkillSwap-Pakistan",
+      title: "TextUtils-React",
+      desc: "TextUtils Studio is a premium, browser-based text manipulation and analytics toolkit. Built with a stunning \"Deep Cyber Glass\" UI, it offers over 100 advanced text formatting, extraction, and cryptography tools designed for developers, writers, and data analysts.",
+      tech: ["React.js", "Bootstrap"],
+      live: "https://farmanullah1.github.io/TextUtils-React.js/",
+      code: "https://github.com/farmanullah1/TextUtils-React.js",
       watch: ""
     },
     {
