@@ -4,13 +4,14 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-content">
-        <div className="footer-logo" style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#38bdf8' }}>
+        {/* Added the highlight class here to make the footer logo gradient */}
+        <div className="footer-logo highlight">
           Farmanullah Ansari
         </div>
-        <div className="footer-links" style={{ display: 'flex', gap: '20px' }}>
-          <a href="#about" style={{ color: 'inherit', textDecoration: 'none' }}>About</a>
-          <a href="#projects" style={{ color: 'inherit', textDecoration: 'none' }}>Projects</a>
-          <a href="#contact" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
+        <div className="footer-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
         <div className="footer-copyright">
           © {new Date().getFullYear()} All Rights Reserved. Built with React.

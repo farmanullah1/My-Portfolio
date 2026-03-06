@@ -278,3 +278,102 @@ footer { text-align: center; padding: 40px 0; color: #64748b; font-size: 0.9rem;
   .nav-links { display: none; }
   .footer-content { flex-direction: column; text-align: center; }
 }
+/* =========================================
+   8. EXPERIENCE TIMELINE
+   ========================================= */
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 30px;
+  border-left: 3px solid rgba(208, 98, 160, 0.3); /* Gradient-matched line */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -52px; /* Centers the icon on the line */
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d062a0, #5c0bed);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px rgba(208, 98, 160, 0.5);
+}
+
+.timeline-content {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+  border-color: #5c0bed;
+  box-shadow: 0 10px 20px rgba(92, 11, 237, 0.2);
+}
+
+.timeline-date {
+  display: inline-block;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.timeline-content h3 { color: #f8fafc; margin-bottom: 5px; font-size: 1.3rem; }
+.timeline-content h4 { margin-bottom: 15px; font-size: 1rem; }
+.timeline-content p { color: #cbd5e1; font-size: 0.95rem; }
+
+/* Light mode overrides for timeline */
+body.light .timeline-content { background: rgba(255, 255, 255, 0.7); border-color: rgba(0,0,0,0.1); }
+body.light .timeline-content h3 { color: #0f172a; }
+body.light .timeline-content p { color: #475569; }
+body.light .timeline-date { background: #e2e8f0; color: #475569; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #080314; }
+::-webkit-scrollbar-thumb { background: #5c0bed; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #d062a0; }
+body.light ::-webkit-scrollbar-track { background: #faf5ff; }
+/* Timeline Bullets */
+.timeline-bullets {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.timeline-bullets li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.timeline-bullets li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #d062a0; /* Your brand pink */
+  font-weight: bold;
+}
+
+/* Light mode override for bullets */
+body.light .timeline-bullets li { color: #475569; }

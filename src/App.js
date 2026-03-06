@@ -10,6 +10,7 @@ import WhyMe from './components/WhyMe';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Experience from './components/Experience';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -30,6 +31,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Experience/>
       <Certifications />
       <WhyMe />
       <Blog />

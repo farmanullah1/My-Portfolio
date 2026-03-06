@@ -10,7 +10,8 @@ const Navbar = ({ theme, toggleTheme }) => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="logo">Farmanullah.</h2>
+      {/* Added the highlight class here to make the logo gradient */}
+      <h2 className="logo highlight">Farmanullah.</h2> 
       <ul className="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
