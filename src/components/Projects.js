@@ -3,12 +3,80 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const PROJECTS = [
-  { title:'Gadd Kaam — SkillSwap Pakistan', emoji:'🤝', desc:'A comprehensive, secure platform for cashless skill exchanging across Pakistan, featuring CNIC verification, real-time trading, and a dedicated safe zone for women.', tech:['MongoDB','Express.js','React.js','Node.js'], live:'https://gadd-kaam-skillswap-pakistan.netlify.app/', code:'https://github.com/farmanullah1/Gadd-Kaam-SkillSwap-Pakistan', featured:true },
-  { title:'Kurrent News', emoji:'📰', desc:'A real-time global news SPA featuring a Triple-API fallback architecture for 100% uptime, infinite scrolling, and dark mode.', tech:['React.js','NewsAPI','Bootstrap'], live:'https://farmanullah1.github.io/Kurrent-News-Top-Headlines-Tech-Politics-Sports/', code:'https://github.com/farmanullah1/Kurrent-News-Top-Headlines-Tech-Politics-Sports' },
-  { title:'TextUtils Studio', emoji:'✏️', desc:'Premium browser-based text manipulation toolkit with a "Deep Cyber Glass" UI offering 100+ formatting, extraction, and cryptography tools.', tech:['React.js','Bootstrap'], live:'https://farmanullah1.github.io/TextUtils-React.js/', code:'https://github.com/farmanullah1/TextUtils-React.js' },
-  { title:'ASP.NET Core Web API', emoji:'⚙️', desc:'A robust REST API demonstrating efficient CRUD operations built with modern C# and ASP.NET Core best practices.', tech:['C#','ASP.NET Core','Web API'], live:'', code:'https://github.com/farmanullah1/CRUD-App-Using-ASP-Core-Web-API' },
-  { title:'Stone, Paper, Scissors', emoji:'✊', desc:'An interactive browser-based game featuring dynamic UI updates and classic game logic with a polished design.', tech:['HTML','CSS','JavaScript'], live:'https://farmanullah1.github.io/Stone-Paper-Scissors-Game-HTML-CSS-JS/', code:'https://github.com/farmanullah1/Stone-Paper-Scissors-Game-HTML-CSS-JS' },
-  { title:'Tic-Tac-Toe', emoji:'❌', desc:'Classic Tic-Tac-Toe web game featuring responsive design and clean state management for turn-based gameplay.', tech:['HTML','CSS','JavaScript'], live:'https://farmanullah1.github.io/Tic-Tac-Toe-HTML-CSS-JS/', code:'https://github.com/farmanullah1/Tic-Tac-Toe-HTML-CSS-JS' },
+
+  { 
+    title: 'Gadd Kaam — SkillSwap Pakistan -MERN Stack', 
+    emoji: '🤝', 
+    desc: 'A secure, MERN-stack platform for cashless skill exchanging featuring CNIC verification and real-time trading.', 
+    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js'], 
+    live: 'https://gadd-kaam-skillswap-pakistan.netlify.app/', 
+    code: 'https://github.com/farmanullah1/Gadd-Kaam-SkillSwap-Pakistan', 
+    featured: true 
+  },
+  { 
+    title: 'BalanceByte - ASP.NET Core', 
+    emoji: '💰', 
+    desc: 'Simple mobile balance checker with smooth UI transitions that tells you how much total balance you will get if you load a specific amount (e.g., load 100)', 
+    tech: ['C#', 'ASP.NET Core', 'MVC', 'SQL Server'], 
+    live: '', 
+    code: 'https://github.com/farmanullah1/BalanceByte-ASP.NET-Core-MVC-App'
+    
+  },
+  { 
+    title: 'iNotebook - Cloud Notes', 
+    emoji: '📓', 
+    desc: 'Secure MERN stack application for managing notes on the cloud, featuring JWT authentication and persistent storage.', 
+    tech: ['Node.js', 'React.js', 'MongoDB', 'Express'], 
+    live: 'https://farmanullah1.github.io/iNotebook/', 
+    code: 'https://github.com/farmanullah1/iNotebook' 
+  },
+  { 
+    title: 'Kurrent News', 
+    emoji: '📰', 
+    desc: 'A global news SPA featuring a Triple-API fallback architecture, infinite scrolling, and dark mode.', 
+    tech: ['React.js', 'NewsAPI', 'Bootstrap'], 
+    live: 'https://farmanullah1.github.io/Kurrent-News-Top-Headlines-Tech-Politics-Sports/', 
+    code: 'https://github.com/farmanullah1/Kurrent-News-Top-Headlines-Tech-Politics-Sports' 
+  },
+  { 
+    title: 'TextRepeat Studio', 
+    emoji: '🔁', 
+    desc: 'Highly efficient text manipulation and repetition tool built with React for rapid content generation and formatting.', 
+    tech: ['React.js', 'JavaScript'], 
+    live: 'https://farmanullah1.github.io/TextRepeat---React/', 
+    code: 'https://github.com/farmanullah1/TextRepeat---React' 
+  },
+  { 
+    title: 'ASP.NET Core CRUD API', 
+    emoji: '⚙️', 
+    desc: 'Robust REST API demonstrating repository patterns, efficient CRUD operations, and modern .NET backend practices.', 
+    tech: ['C#', 'ASP.NET Core', 'Web API'], 
+    live: '', 
+    code: 'https://github.com/farmanullah1/CRUD-App-Using-ASP-Core-Web-API' 
+  },
+  { 
+    title: 'BalanceWave - React', 
+    emoji: '🌊', 
+    desc: 'Create a mobile balance checker that lets a user enter an amount they want to load (for example, 100), and then shows how much total balance they will get after loading that amount. The interface should be simple, modern, and mobile‑friendly, with smooth transitions.', 
+    tech: ['React.js', 'Framer Motion', 'Tailwind CSS'], 
+    live: 'https://farmanullah1.github.io/BalanceWave-React/', 
+    code: 'https://github.com/farmanullah1/BalanceWave-React' 
+  },
+  { 
+    title: 'Stone, Paper, Scissors', 
+    emoji: '✊', 
+    desc: 'Interactive browser game featuring dynamic UI updates and classic game logic.', 
+    tech: ['HTML', 'CSS', 'JavaScript'], 
+    live: 'https://farmanullah1.github.io/Stone-Paper-Scissors-Game-HTML-CSS-JS/', 
+    code: 'https://github.com/farmanullah1/Stone-Paper-Scissors-Game-HTML-CSS-JS' 
+  },
+
+  { title:'TextUtils Studio', 
+    emoji:'✏️',
+     desc:'Premium browser-based text manipulation toolkit with a "Deep Cyber Glass" UI offering 100+ formatting, extraction, and cryptography tools.',
+      tech:['React.js','Bootstrap'], 
+      live:'https://farmanullah1.github.io/TextUtils-React.js/', 
+      code:'https://github.com/farmanullah1/TextUtils-React.js' },
 ];
 const FILTERS = ['All','React.js','.NET','Node.js','Web Basics'];
 const match = (p,f) => {
