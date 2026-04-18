@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaDownload } from 'react-icons/fa';
-import profilePic from '../assets/profile.png';
+import profilePic from '../assets/profile2.png';
 import cvFile from '../assets/Farmanullah Ansari CV - All.pdf';
 
 const ROLES = [
@@ -11,29 +11,82 @@ const ROLES = [
   'Cloud & DevOps Enthusiast',
 ];
 
-const Hero = () => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayedRole, setDisplayedRole] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
+const SOCIALS = [
+  { href: 'https://github.com/farmanullah1',                  icon: <FaGithub />,   label: 'GitHub'   },
+  { href: 'https://www.linkedin.com/in/farmanullah-ansari',   icon: <FaLinkedin />, label: 'LinkedIn' },
+  // { href: 'https://twitter.com',                              icon: <FaTwitter />,  label: 'Twitter'  },
+];
 
+const STATS = [
+  { num: '3+',  label: 'Years Coding'   },
+  { num: '10+', label: 'Projects Built' },
+  { num: '9+',  label: 'Certifications' },
+];
+
+const FLOAT_BADGES = [
+  { label: '⚛️  React.js',     cls: 'fb--1',  dy: [-12, 0, -12], dur: 3.0 },
+  { label: '🟢  Node.js',      cls: 'fb--2',  dy: [-9,  0,  -9], dur: 3.8 },
+  { label: '🌩️  AWS',          cls: 'fb--3',  dy: [11,  0,  11], dur: 3.3 },
+  { label: '📘  TypeScript',   cls: 'fb--4',  dy: [10,  0,  10], dur: 3.5 },
+  { label: '🎯  C#',           cls: 'fb--5',  dy: [-14, 0, -14], dur: 4.0 },
+  { label: '🚀  ASP.NET Core', cls: 'fb--6',  dy: [-8,  0,  -8], dur: 3.2 },
+  { label: '🐳  Docker',       cls: 'fb--7',  dy: [12,  0,  12], dur: 3.6 },
+  { label: '🐧  Linux',        cls: 'fb--8',  dy: [7,   0,   7], dur: 3.9 },
+  { label: '📂  Git & GitHub', cls: 'fb--9',  dy: [-11, 0, -11], dur: 3.4 },
+  { label: '📊  Power BI',     cls: 'fb--10', dy: [-13, 0, -13], dur: 4.2 },
+  { label: '🐍  Python',       cls: 'fb--11', dy: [9,   0,   9], dur: 3.7 },
+];
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 28 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.4, 0, 0.2, 1] } },
+};
+
+const Hero = () => {
+  const [roleIndex,     setRoleIndex]     = useState(0);
+  const [displayedRole, setDisplayedRole] = useState('');
+  const [isTyping,      setIsTyping]      = useState(true);
+
+  // Parallax tilt on image
+  const imageRef = useRef(null);
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const smx = useSpring(mx, { stiffness: 120, damping: 20 });
+  const smy = useSpring(my, { stiffness: 120, damping: 20 });
+  const rotateX = useTransform(smy, [-0.5, 0.5], [8, -8]);
+  const rotateY = useTransform(smx, [-0.5, 0.5], [-8, 8]);
+
+  const handleMouseMove = (e) => {
+    const rect = imageRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    mx.set((e.clientX - rect.left) / rect.width - 0.5);
+    my.set((e.clientY - rect.top)  / rect.height - 0.5);
+  };
+  const handleMouseLeave = () => { mx.set(0); my.set(0); };
+
+  // Typewriter
   useEffect(() => {
-    const targetRole = ROLES[roleIndex];
-    let timeout;
+    const target = ROLES[roleIndex];
+    let t;
     if (isTyping) {
-      if (displayedRole.length < targetRole.length) {
-        timeout = setTimeout(() => setDisplayedRole(targetRole.slice(0, displayedRole.length + 1)), 60);
+      if (displayedRole.length < target.length) {
+        t = setTimeout(() => setDisplayedRole(target.slice(0, displayedRole.length + 1)), 58);
       } else {
-        timeout = setTimeout(() => setIsTyping(false), 1800);
+        t = setTimeout(() => setIsTyping(false), 1900);
       }
     } else {
       if (displayedRole.length > 0) {
-        timeout = setTimeout(() => setDisplayedRole(displayedRole.slice(0, -1)), 35);
+        t = setTimeout(() => setDisplayedRole(displayedRole.slice(0, -1)), 32);
       } else {
-        setRoleIndex((prev) => (prev + 1) % ROLES.length);
+        setRoleIndex((p) => (p + 1) % ROLES.length);
         setIsTyping(true);
       }
     }
-    return () => clearTimeout(timeout);
+    return () => clearTimeout(t);
   }, [displayedRole, isTyping, roleIndex]);
 
   return (
@@ -42,192 +95,126 @@ const Hero = () => {
       id="home"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.7 }}
     >
-      {/* Animated background mesh / particle orbs */}
+      {/* Background */}
       <div className="hero-bg" aria-hidden="true">
         <div className="hero-orb hero-orb--purple" />
-        <div className="hero-orb hero-orb--pink" />
-        <div className="hero-orb hero-orb--cyan" />
-        <div className="hero-grid-lines" />
+        <div className="hero-orb hero-orb--pink"   />
+        <div className="hero-orb hero-orb--cyan"   />
+        <div className="hero-orb hero-orb--teal"   />
+        <div className="hero-grid" />
       </div>
 
-      {/* ─── Inner layout wrapper ─── */}
+      {/* Content row */}
       <div className="hero-inner">
 
-        {/* ── LEFT: Text Content ── */}
-        <div className="hero-content">
-
-          {/* Badge */}
-          <motion.div
-            className="hero-badge"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-          >
+        {/* LEFT */}
+        <motion.div
+          className="hero-content"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.div className="hero-badge" variants={item}>
             <span className="blink-dot" />
             Available for new opportunities
           </motion.div>
 
-          {/* Greeting */}
-          <motion.h1
-            className="hero-greeting"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
+          <motion.h1 className="hero-greeting" variants={item}>
             Hi, I'm
-            <span className="hero-name highlight">Farmanullah Ansari</span>
+            <span className="hero-name">Farmanullah Ansari</span>
           </motion.h1>
 
-          {/* Typing Role */}
-          <motion.h3
-            className="hero-role"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-          >
-            <span className="role-prefix">I'm a </span>
+          <motion.h3 className="hero-role" variants={item}>
+            <span className="role-prefix">I'm a&nbsp;</span>
             <span className="role-text">{displayedRole}</span>
             <span className="typing-cursor" />
           </motion.h3>
 
-          {/* Description */}
-          <motion.p
-            className="hero-desc"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-          >
+          <motion.p className="hero-desc" variants={item}>
             I engineer dynamic, user-friendly, and scalable web applications. Passionate about
             the MERN stack, ASP.NET Core, cloud computing, and building seamless digital experiences.
           </motion.p>
 
-          {/* Stats */}
-          <motion.div
-            className="hero-stats"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.5 }}
-          >
-            {[
-              { num: '3+', label: 'Years Coding' },
-              { num: '10+', label: 'Projects Built' },
-              { num: '9+', label: 'Certifications' },
-            ].map((stat, i) => (
+          <motion.div className="hero-stats" variants={item}>
+            {STATS.map((s, i) => (
               <motion.div
                 className="stat-item"
                 key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6 + i * 0.1 }}
+                transition={{ delay: 0.65 + i * 0.12, type: 'spring', stiffness: 220 }}
               >
-                <span className="stat-num">{stat.num}</span>
-                <span className="stat-label">{stat.label}</span>
+                <span className="stat-num">{s.num}</span>
+                <span className="stat-label">{s.label}</span>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div
-            className="hero-actions"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-          >
-            <a href="#contact" className="btn-primary">
-              <FaEnvelope /> Hire Me
-            </a>
-            <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-secondary">
-              <FaDownload /> Download CV
-            </a>
+          <motion.div className="hero-actions" variants={item}>
+            <a href="#contact" className="btn-primary"><FaEnvelope /> Hire Me</a>
+            <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-secondary"><FaDownload /> Download CV</a>
           </motion.div>
 
-          {/* Socials */}
-          <motion.div
-            className="hero-social"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85 }}
-          >
-            {[
-              { href: 'https://github.com/farmanullah1', icon: <FaGithub />, label: 'GitHub' },
-              { href: 'https://www.linkedin.com/in/farmanullah-ansari', icon: <FaLinkedin />, label: 'LinkedIn' },
-              { href: 'https://twitter.com', icon: <FaTwitter />, label: 'Twitter' },
-            ].map((s, i) => (
+          <motion.div className="hero-social" variants={item}>
+            {SOCIALS.map((s, i) => (
               <motion.a
-                key={i}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                whileHover={{ y: -4, scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                key={i} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}
+                whileHover={{ y: -7, scale: 1.15 }} whileTap={{ scale: 0.9 }}
+                transition={{ type: 'spring', stiffness: 320, damping: 16 }}
               >
                 {s.icon}
               </motion.a>
             ))}
             <span className="hero-social-label">Let's connect</span>
           </motion.div>
-        </div>
+        </motion.div>
 
-        {/* ── RIGHT: Profile Image ── */}
+        {/* RIGHT — tilt card */}
         <motion.div
           className="hero-image-container"
-          initial={{ opacity: 0, scale: 0.5, x: 60 }}
+          initial={{ opacity: 0, scale: 0.5, x: 70 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.9, type: 'spring', stiffness: 80 }}
+          transition={{ delay: 0.28, duration: 0.9, type: 'spring', stiffness: 70 }}
         >
-          {/* Floating tech badge decorations */}
-          <motion.div
-            className="hero-float-badge hero-float-badge--tl"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            ⚛️ React
-          </motion.div>
-          <motion.div
-            className="hero-float-badge hero-float-badge--br"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-          >
-            🌩️ AWS
-          </motion.div>
-          <motion.div
-            className="hero-float-badge hero-float-badge--tr"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          >
-            🟢 Node.js
-          </motion.div>
+          {FLOAT_BADGES.map((b, i) => (
+            <motion.div
+              key={i} className={`hero-float-badge ${b.cls}`}
+              animate={{ y: b.dy }}
+              transition={{ duration: b.dur, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
+            >
+              {b.label}
+            </motion.div>
+          ))}
 
-          <div className="hero-image-wrap">
-            {/* Outer spinning dashed ring */}
-            <div className="hero-ring hero-ring--outer" />
-            {/* Inner glowing ring */}
-            <div className="hero-ring hero-ring--inner" />
+          <motion.div
+            className="hero-image-wrap"
+            ref={imageRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ rotateX, rotateY, transformPerspective: 800 }}
+          >
+            <div className="hero-ring hero-ring--dashed" />
+            <div className="hero-ring hero-ring--glow"   />
+            <div className="hero-ring hero-ring--pulse"  />
             <div className="hero-image">
               <img src={profilePic} alt="Farmanullah Ansari" />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
-
-      </div>{/* /hero-inner */}
+      </div>
 
       {/* Scroll cue */}
       <motion.div
         className="hero-scroll-cue"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
       >
-        <div className="scroll-mouse">
-          <div className="scroll-wheel" />
-        </div>
+        <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}>
+          <div className="scroll-mouse"><div className="scroll-wheel" /></div>
+        </motion.div>
         <span>Scroll down</span>
       </motion.div>
-
     </motion.header>
   );
 };
