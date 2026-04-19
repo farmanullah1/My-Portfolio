@@ -77,6 +77,14 @@ const PROJECTS = [
       tech:['React.js','Bootstrap'], 
       live:'https://farmanullah1.github.io/TextUtils-React.js/', 
       code:'https://github.com/farmanullah1/TextUtils-React.js' },
+       {
+      title: "❌⭕ Tic-Tac-Toe",
+      desc: "A classic Tic-Tac-Toe web game featuring responsive design and state management for turn-based gameplay.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      live: "https://farmanullah1.github.io/Tic-Tac-Toe-HTML-CSS-JS/",
+      code: "https://github.com/farmanullah1/Tic-Tac-Toe-HTML-CSS-JS",
+      watch: ""
+    },
 ];
 const FILTERS = ['All','React.js','.NET','Node.js','Web Basics'];
 const match = (p,f) => {

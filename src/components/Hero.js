@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa';
 import profilePic from '../assets/profile2.png';
 import cvFile from '../assets/Farmanullah Ansari CV - All.pdf';
 
@@ -12,29 +12,29 @@ const ROLES = [
 ];
 
 const SOCIALS = [
-  { href: 'https://github.com/farmanullah1',                  icon: <FaGithub />,   label: 'GitHub'   },
-  { href: 'https://www.linkedin.com/in/farmanullah-ansari',   icon: <FaLinkedin />, label: 'LinkedIn' },
-  // { href: 'https://twitter.com',                              icon: <FaTwitter />,  label: 'Twitter'  },
+  { href: 'https://github.com/farmanullah1',                icon: <FaGithub />,   label: 'GitHub'   },
+  { href: 'https://www.linkedin.com/in/farmanullah-ansari', icon: <FaLinkedin />, label: 'LinkedIn' },
 ];
 
 const STATS = [
   { num: '3+',  label: 'Years Coding'   },
   { num: '10+', label: 'Projects Built' },
-  { num: '9+',  label: 'Certifications' },
+  { num: '10+', label: 'Certifications' },
 ];
 
+/* Enhanced float badges — cleaner labels, better orbital positions */
 const FLOAT_BADGES = [
-  { label: '⚛️  React.js',     cls: 'fb--1',  dy: [-12, 0, -12], dur: 3.0 },
-  { label: '🟢  Node.js',      cls: 'fb--2',  dy: [-9,  0,  -9], dur: 3.8 },
-  { label: '🌩️  AWS',          cls: 'fb--3',  dy: [11,  0,  11], dur: 3.3 },
-  { label: '📘  TypeScript',   cls: 'fb--4',  dy: [10,  0,  10], dur: 3.5 },
-  { label: '🎯  C#',           cls: 'fb--5',  dy: [-14, 0, -14], dur: 4.0 },
-  { label: '🚀  ASP.NET Core', cls: 'fb--6',  dy: [-8,  0,  -8], dur: 3.2 },
-  { label: '🐳  Docker',       cls: 'fb--7',  dy: [12,  0,  12], dur: 3.6 },
-  { label: '🐧  Linux',        cls: 'fb--8',  dy: [7,   0,   7], dur: 3.9 },
-  { label: '📂  Git & GitHub', cls: 'fb--9',  dy: [-11, 0, -11], dur: 3.4 },
-  { label: '📊  Power BI',     cls: 'fb--10', dy: [-13, 0, -13], dur: 4.2 },
-  { label: '🐍  Python',       cls: 'fb--11', dy: [9,   0,   9], dur: 3.7 },
+  { label: '⚛️ React.js',      cls: 'fb--1',  dy: [-12, 0, -12], dur: 3.0 },
+  { label: '🟢 Node.js',       cls: 'fb--2',  dy: [-9,  0,  -9], dur: 3.8 },
+  { label: '🌩️ AWS',           cls: 'fb--3',  dy: [ 11, 0,  11], dur: 3.3 },
+  { label: '📘 TypeScript',    cls: 'fb--4',  dy: [ 10, 0,  10], dur: 3.5 },
+  { label: '🎯 C# / .NET',     cls: 'fb--5',  dy: [-14, 0, -14], dur: 4.0 },
+  { label: '🚀 ASP.NET Core',  cls: 'fb--6',  dy: [-8,  0,  -8], dur: 3.2 },
+  { label: '🐳 Docker',        cls: 'fb--7',  dy: [ 12, 0,  12], dur: 3.6 },
+  { label: '🐧 Linux',         cls: 'fb--8',  dy: [  7, 0,   7], dur: 3.9 },
+  { label: '🗂️ Git & GitHub',  cls: 'fb--9',  dy: [-11, 0, -11], dur: 3.4 },
+  { label: '📊 Power BI',      cls: 'fb--10', dy: [-13, 0, -13], dur: 4.2 },
+  { label: '🐍 Python',        cls: 'fb--11', dy: [  9, 0,   9], dur: 3.7 },
 ];
 
 const container = {
@@ -51,7 +51,6 @@ const Hero = () => {
   const [displayedRole, setDisplayedRole] = useState('');
   const [isTyping,      setIsTyping]      = useState(true);
 
-  // Parallax tilt on image
   const imageRef = useRef(null);
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -68,7 +67,6 @@ const Hero = () => {
   };
   const handleMouseLeave = () => { mx.set(0); my.set(0); };
 
-  // Typewriter
   useEffect(() => {
     const target = ROLES[roleIndex];
     let t;
@@ -90,13 +88,7 @@ const Hero = () => {
   }, [displayedRole, isTyping, roleIndex]);
 
   return (
-    <motion.header
-      className="hero"
-      id="home"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.7 }}
-    >
+    <motion.header className="hero" id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7 }}>
       {/* Background */}
       <div className="hero-bg" aria-hidden="true">
         <div className="hero-orb hero-orb--purple" />
@@ -106,16 +98,9 @@ const Hero = () => {
         <div className="hero-grid" />
       </div>
 
-      {/* Content row */}
       <div className="hero-inner">
-
         {/* LEFT */}
-        <motion.div
-          className="hero-content"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
+        <motion.div className="hero-content" variants={container} initial="hidden" animate="show">
           <motion.div className="hero-badge" variants={item}>
             <span className="blink-dot" />
             Available for new opportunities
@@ -139,13 +124,10 @@ const Hero = () => {
 
           <motion.div className="hero-stats" variants={item}>
             {STATS.map((s, i) => (
-              <motion.div
-                className="stat-item"
-                key={i}
+              <motion.div className="stat-item" key={i}
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.65 + i * 0.12, type: 'spring', stiffness: 220 }}
-              >
+                transition={{ delay: 0.65 + i * 0.12, type: 'spring', stiffness: 220 }}>
                 <span className="stat-num">{s.num}</span>
                 <span className="stat-label">{s.label}</span>
               </motion.div>
@@ -159,11 +141,9 @@ const Hero = () => {
 
           <motion.div className="hero-social" variants={item}>
             {SOCIALS.map((s, i) => (
-              <motion.a
-                key={i} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}
+              <motion.a key={i} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}
                 whileHover={{ y: -7, scale: 1.15 }} whileTap={{ scale: 0.9 }}
-                transition={{ type: 'spring', stiffness: 320, damping: 16 }}
-              >
+                transition={{ type: 'spring', stiffness: 320, damping: 16 }}>
                 {s.icon}
               </motion.a>
             ))}
@@ -172,29 +152,22 @@ const Hero = () => {
         </motion.div>
 
         {/* RIGHT — tilt card */}
-        <motion.div
-          className="hero-image-container"
+        <motion.div className="hero-image-container"
           initial={{ opacity: 0, scale: 0.5, x: 70 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ delay: 0.28, duration: 0.9, type: 'spring', stiffness: 70 }}
-        >
+          transition={{ delay: 0.28, duration: 0.9, type: 'spring', stiffness: 70 }}>
+
           {FLOAT_BADGES.map((b, i) => (
-            <motion.div
-              key={i} className={`hero-float-badge ${b.cls}`}
+            <motion.div key={i} className={`hero-float-badge ${b.cls}`}
               animate={{ y: b.dy }}
-              transition={{ duration: b.dur, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
-            >
+              transition={{ duration: b.dur, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}>
               {b.label}
             </motion.div>
           ))}
 
-          <motion.div
-            className="hero-image-wrap"
-            ref={imageRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ rotateX, rotateY, transformPerspective: 800 }}
-          >
+          <motion.div className="hero-image-wrap" ref={imageRef}
+            onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}
+            style={{ rotateX, rotateY, transformPerspective: 800 }}>
             <div className="hero-ring hero-ring--dashed" />
             <div className="hero-ring hero-ring--glow"   />
             <div className="hero-ring hero-ring--pulse"  />
@@ -206,10 +179,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll cue */}
-      <motion.div
-        className="hero-scroll-cue"
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
-      >
+      <motion.div className="hero-scroll-cue" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>
         <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}>
           <div className="scroll-mouse"><div className="scroll-wheel" /></div>
         </motion.div>

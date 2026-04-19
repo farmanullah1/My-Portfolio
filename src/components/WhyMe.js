@@ -5,72 +5,115 @@ const FEATURES = [
   {
     icon: '🕒',
     title: '24/7 Support',
-    desc: 'Available round the clock for any development needs. Your project gets the attention it deserves, any time.',
-    color: 'var(--accent-pink)',
+    desc: 'Available round the clock for any development needs. Your project gets the attention it deserves, any time of day.',
+    color: '#e040fb',
+    tag: 'Reliable',
   },
   {
     icon: '⚡',
     title: 'Fast & Reliable',
     desc: 'Delivering high-performance web solutions with speed and precision — efficiency without compromising quality.',
-    color: 'var(--accent-purple)',
+    color: '#7c3aed',
+    tag: 'Efficient',
   },
   {
     icon: '🔄',
-    title: 'Flexible',
-    desc: 'Adapting to unique project requirements seamlessly. From startups to enterprises, solutions tailored to fit.',
-    color: 'var(--accent-cyan)',
+    title: 'Adaptable',
+    desc: 'Adapting seamlessly to unique project requirements. From startups to enterprises, solutions tailored to fit any scope.',
+    color: '#00e5ff',
+    tag: 'Flexible',
   },
   {
     icon: '🔒',
-    title: 'Secure',
-    desc: 'Security is built-in from day one. Best practices for authentication, data protection, and secure APIs.',
+    title: 'Security-First',
+    desc: 'Security baked in from day one — JWT auth, CNIC verification, data encryption, and secure REST APIs.',
     color: '#f59e0b',
+    tag: 'Secure',
   },
   {
     icon: '📱',
-    title: 'Responsive',
+    title: 'Fully Responsive',
     desc: 'Every interface is crafted to look and work flawlessly across all devices — mobile, tablet, and desktop.',
-    color: '#10b981',
+    color: '#00e676',
+    tag: 'Cross-Device',
   },
   {
     icon: '🚀',
-    title: 'Scalable',
-    desc: 'Architecture designed to grow with your product. Cloud-native, containerized, and built for scale.',
-    color: '#6366f1',
+    title: 'Cloud-Native Scale',
+    desc: 'Architecture designed to grow with your product. AWS, Docker, CI/CD pipelines — built for real-world scale.',
+    color: '#40c4ff',
+    tag: 'Scalable',
+  },
+  {
+    icon: '🎯',
+    title: 'Deadline-Driven',
+    desc: 'I treat deadlines as commitments, not suggestions. Projects are delivered on time, tested, and ready to ship.',
+    color: '#ff4081',
+    tag: 'Punctual',
+  },
+  {
+    icon: '🤝',
+    title: 'Open Communication',
+    desc: 'Transparent updates, regular check-ins, and honest feedback throughout the entire project lifecycle.',
+    color: '#ffab40',
+    tag: 'Collaborative',
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.48, ease: [0.4, 0, 0.2, 1] } },
+};
+
 const WhyMe = () => (
   <section className="why-me" id="why-me">
-    <motion.h2
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-    >
+    <motion.h2 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
       Why Work With Me?
     </motion.h2>
 
-    <div className="features-grid">
+    <motion.p
+      className="why-me-subtitle"
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.1 }}
+    >
+      I bring more than just code — I bring commitment, craftsmanship, and a genuine passion for building things that matter.
+    </motion.p>
+
+    <motion.div
+      className="features-grid"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: '-60px' }}
+    >
       {FEATURES.map((item, i) => (
         <motion.div
           className="feature-card"
           key={i}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, delay: i * 0.08 }}
-          whileHover={{ y: -7, scale: 1.02 }}
+          variants={cardVariants}
+          whileHover={{ y: -8, scale: 1.025 }}
           style={{ '--feature-color': item.color }}
         >
+          {/* Corner glow handled in CSS */}
+          <div className="feature-tag" style={{ color: item.color, background: `${item.color}14`, borderColor: `${item.color}44` }}>
+            {item.tag}
+          </div>
           <div className="feature-icon-wrap">
-            <span className="feature-icon">{item.icon}</span>
+            <span className="feature-icon" role="img" aria-label={item.title}>{item.icon}</span>
           </div>
           <h3>{item.title}</h3>
           <p>{item.desc}</p>
           <div className="feature-accent-line" />
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   </section>
 );
 
