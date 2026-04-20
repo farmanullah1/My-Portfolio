@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Hi there, I'm Farmanullah Ansari 👋
+### Software Engineer | .NET, React.js & Docker Specialist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I am a dedicated Software Engineer with a focus on building scalable web applications and robust cloud infrastructure. My expertise spans the **MERN stack**, **.NET ecosystem**, and **DevOps** practices like containerization with Docker and AWS deployment.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### 🚀 Technical Arsenal
 
-### `npm start`
+| Category | Skills |
+| :--- | :--- |
+| **Languages** | C#, TypeScript, JavaScript (ES6+), Python, HTML5, CSS3 |
+| **Frontend** | React.js, Tailwind CSS, Framer Motion, Bootstrap |
+| **Backend** | ASP.NET Core MVC, Web API, Node.js, Express.js |
+| **Database** | MongoDB, SQL Server |
+| **DevOps & Cloud** | Docker, AWS (EC2, Elastic Beanstalk), NGINX, Linux, Git/GitHub |
+| **Data & AI** | Power BI (DAX, ETL), Prompt Engineering |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🛠️ Featured Projects
 
-### `npm test`
+#### 🤝 [Gadd Kaam — SkillSwap Pakistan](https://gadd-kaam-skillswap-pakistan.netlify.app/)
+* **Tech Stack:** MongoDB, Express, React, Node.js
+* A secure MERN platform digitizing the barter system for skill exchange. Features CNIC verification and a dedicated 'Women’s Zone' for safe trading.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 🧱 [Modern Tetris](https://farmanullah1.github.io/Modern-Tetris/) & 🐍 [Snake Game](https://farmanullah1.github.io/Snake-Game/)
+* **Tech Stack:** TypeScript, HTML5 Canvas, CSS3
+* High-performance, arcade-style games focusing on clean TypeScript architecture and fluid state management.
 
-### `npm run build`
+#### ⚙️ [ASP.NET Core CRUD API](https://github.com/farmanullah1/CRUD-App-Using-ASP-Core-Web-API)
+* **Tech Stack:** C#, ASP.NET Core Web API, SQL Server
+* A robust RESTful API demonstrating repository patterns and optimized data processing.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### 📜 Certifications
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **Docker MasterClass:** Docker, Compose, SWARM (2025)
+* **ASP.NET Core MVC 6:** Real-World Projects (2026)
+* **React Crash Course:** From Zero to Hero (2026)
+* **Google Prompting Essentials** (2025)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 📫 Let's Connect!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* **Email:** [farmanullahansari999@gmail.com](mailto:farmanullahansari999@gmail.com)
+* **LinkedIn:** [linkedin.com/in/farmanullah1](https://linkedin.com/in/farmanullah1)
+* **GitHub:** [github.com/farmanullah1](https://github.com/farmanullah1)
+* **Location:** Karachi, Sindh, Pakistan 🇵🇰
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*“Passionate about automating workflows and engineering inclusive, community-driven digital solutions.”*

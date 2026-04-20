@@ -85,12 +85,44 @@ const PROJECTS = [
       code: "https://github.com/farmanullah1/Tic-Tac-Toe-HTML-CSS-JS",
       watch: ""
     },
+    { 
+    title: 'Modern Tetris', 
+    emoji: '🧱', 
+    desc: 'A sleek, TypeScript-powered rendition of the classic arcade game featuring fluid animations, score tracking, and progressive difficulty.', 
+    tech: ['TypeScript', 'HTML5 Canvas', 'CSS3'], 
+    live: 'https://farmanullah1.github.io/Modern-Tetris/', 
+    code: 'https://github.com/farmanullah1/Modern-Tetris' 
+  },
+  { 
+    title: 'Classic Snake Game', 
+    emoji: '🐍', 
+    desc: 'A high-performance Snake game built with TypeScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['TypeScript', 'CSS', 'JavaScript'], 
+    live: 'https://farmanullah1.github.io/Snake-Game/', 
+    code: 'https://github.com/farmanullah1/Snake-Game' 
+  },
 ];
-const FILTERS = ['All','React.js','.NET','Node.js','Web Basics'];
-const match = (p,f) => {
-  if (f==='All')        return true;
-  if (f==='.NET')       return p.tech.includes('C#') || p.tech.includes('ASP.NET Core');
-  if (f==='Web Basics') return p.tech.includes('HTML');
+const FILTERS = ['All', 'MERN', 'React.js', '.NET', 'Node.js', 'TypeScript', 'JavaScript', 'Web Basics'];
+
+const match = (p, f) => {
+  if (f === 'All') return true;
+  
+  // Logic for MERN (checks if it contains the core stack components)
+  if (f === 'MERN') return p.tech.includes('MongoDB') && p.tech.includes('React.js');
+  
+  // Logic for .NET ecosystem
+  if (f === '.NET') return p.tech.includes('C#') || p.tech.includes('ASP.NET Core') || p.tech.includes('Web API');
+  
+  // Logic for TypeScript
+  if (f === 'TypeScript') return p.tech.includes('TypeScript');
+  
+  // Logic for JavaScript (catches vanilla JS projects)
+  if (f === 'JavaScript') return p.tech.includes('JavaScript');
+  
+  // Logic for Web Basics (HTML/CSS focused)
+  if (f === 'Web Basics') return p.tech.includes('HTML') || p.tech.includes('CSS');
+  
+  // Default string match for React.js, Node.js, etc.
   return p.tech.includes(f);
 };
 
