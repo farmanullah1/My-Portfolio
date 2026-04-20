@@ -4,6 +4,7 @@
 I am a dedicated Software Engineer with a focus on building scalable web applications and robust cloud infrastructure. My expertise spans the **MERN stack**, **.NET ecosystem**, and **DevOps** practices like containerization with Docker and AWS deployment.
 
 ---
+🚀 **Live Portfolio:** [https://farmanullah1.github.io/My-Portfolio/](https://farmanullah1.github.io/My-Portfolio/)
 
 ### 🚀 Technical Arsenal
 
