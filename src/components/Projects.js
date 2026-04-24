@@ -39,6 +39,22 @@ const PROJECTS = [
     code: 'https://github.com/farmanullah1/Kurrent-News-Top-Headlines-Tech-Politics-Sports' 
   },
   { 
+    title: 'Portfolio - HTML CSS JS', 
+    emoji: '💻', 
+    desc: 'My Old portfolio website made with HTML, CSS and JavaScript.', 
+    tech: ['HTML', 'CSS', 'JavaScript','GSAP'], 
+    live: 'https://farmanullah1.github.io/Portfolio-HTML-CSS-JS/', 
+    code: 'https://github.com/farmanullah1/Portfolio-HTML-CSS-JS' 
+  },
+  { 
+    title: 'Memory Card Matching Game', 
+    emoji: '📖', 
+    desc: 'A beautiful, fully responsive memory card matching game built with React, TypeScript, and Vite. This game features smooth animations, multiple themes, sound effects, and high score tracking.', 
+    tech: ['React', 'TypeScript', 'Vite'], 
+    live: 'https://farmanullah1.github.io/Memory-Card-Matching-Game/', 
+    code: 'https://github.com/farmanullah1/Memory-Card-Matching-Game' 
+  },
+  { 
     title: 'TextRepeat Studio', 
     emoji: '🔁', 
     desc: 'Highly efficient text manipulation and repetition tool built with React for rapid content generation and formatting.', 

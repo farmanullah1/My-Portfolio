@@ -9,6 +9,17 @@ const ROLES = [
   'MERN Stack Engineer',
   'ASP.NET Core Developer',
   'Cloud & DevOps Enthusiast',
+  'TypeScript Developer',
+  'Docker & Containerization Specialist',
+  'Data Analyst & Power BI Developer',
+  'Software Engineer',
+  // New Additions:
+  'Backend API Architect',
+  'Frontend Specialist (React)',
+  'Cloud Infrastructure Engineer',
+  'Cross-Platform Solutions Developer',
+  'Open Source Contributor',
+  'Logic & Game Engine Developer'
 ];
 
 const SOCIALS = [
