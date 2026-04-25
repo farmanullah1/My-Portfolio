@@ -826,6 +826,30 @@ body.light .hero-float-badge {
 .project-link--code { border:1.5px solid rgba(170,100,255,.4); color:var(--text-muted); background:transparent; }
 .project-link--code:hover { border-color:var(--c3); color:var(--c3); background:rgba(0,229,255,.08); transform:translateY(-3px) scale(1.04); box-shadow:0 6px 18px var(--glow3); }
 
+.more-button-container { display:flex; justify-content:center; margin-top:48px; }
+.more-button {
+  width:100%; max-width:600px; padding:16px 32px; 
+  background:var(--grad); color:#fff; border:none; 
+  border-radius:var(--r); font-size:1rem; font-weight:800;
+  font-family:'Outfit',sans-serif; cursor:pointer;
+  box-shadow:0 8px 28px var(--glow1);
+  transition:all .35s var(--spring);
+  position:relative; overflow:hidden;
+}
+.more-button::before {
+  content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+  transition:left .5s;
+}
+.more-button:hover {
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px var(--glow2);
+}
+.more-button:hover::before { left:100%; }
+.more-button:active {
+  transform:scale(.98);
+}
+
 /* ── 10. TIMELINE ───────────────────────────────────────────── */
 .timeline { max-width:920px; margin:0 auto; padding-left:52px; position:relative; }
 .timeline::before {
@@ -1444,6 +1468,8 @@ body.light .timeline-content::before { border-right-color: rgba(124,58,237,.12);
 
   /* Projects */
   .project-grid        { grid-template-columns:1fr; }
+  .more-button         { padding:14px 28px; font-size:.95rem; }
+  .more-button-container { margin-top:40px; padding:0 18px; }
 
   /* Certifications */
   .cert-grid-v2        { grid-template-columns:1fr; }
@@ -1479,6 +1505,7 @@ body.light .timeline-content::before { border-right-color: rgba(124,58,237,.12);
   .why-me-subtitle     { margin-left:10px; margin-right:10px; }
   .cert-stats-bar      { flex-direction:column; gap:12px; }
   .cert-stat-divider   { width:80%; height:1px; }
+  .more-button         { padding:12px 24px; font-size:.9rem; }
 }
 
 @media (max-width:480px) {
@@ -1498,6 +1525,8 @@ body.light .timeline-content::before { border-right-color: rgba(124,58,237,.12);
 
   .project-card h3     { font-size:1.02rem; padding-right:0; }
   .project-featured-badge { position:static; margin-bottom:8px; width:fit-content; }
+  .more-button         { padding:11px 20px; font-size:.85rem; max-width:calc(100% - 36px); }
+  .more-button-container { padding:0 18px; }
 
   .timeline-content h3 { font-size:1.05rem; }
   .timeline            { padding-left:20px; }

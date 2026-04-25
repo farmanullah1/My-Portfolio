@@ -144,7 +144,14 @@ const match = (p, f) => {
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(8);
   const filtered = PROJECTS.filter(p => match(p, filter));
+  const displayed = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
+
+  const loadMore = () => {
+    setVisibleCount(prev => prev + 8);
+  };
 
   return (
     <section className="projects" id="projects">
@@ -154,14 +161,17 @@ const Projects = () => {
       <div className="filter-container">
         {FILTERS.map(f => (
           <motion.button key={f} className={`filter-btn${filter===f?' active':''}`}
-            onClick={() => setFilter(f)} whileHover={{ scale:1.06 }} whileTap={{ scale:.94 }}>
+            onClick={() => {
+              setFilter(f);
+              setVisibleCount(8);
+            }} whileHover={{ scale:1.06 }} whileTap={{ scale:.94 }}>
             {f}
           </motion.button>
         ))}
       </div>
       <motion.div layout className="project-grid">
         <AnimatePresence mode="popLayout">
-          {filtered.map(proj => (
+          {displayed.map(proj => (
             <motion.div
               className={`project-card${proj.featured?' project-card--featured':''}`}
               key={proj.title} layout
@@ -181,6 +191,13 @@ const Projects = () => {
           ))}
         </AnimatePresence>
       </motion.div>
+      {hasMore && (
+        <motion.div className="more-button-container" initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:false }}>
+          <motion.button className="more-button" onClick={loadMore} whileHover={{ scale:1.04 }} whileTap={{ scale:.97 }}>
+            More Projects
+          </motion.button>
+        </motion.div>
+      )}
     </section>
   );
 };
