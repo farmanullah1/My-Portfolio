@@ -15,7 +15,7 @@ const PROJECTS = [
   },
   { 
     title: 'SkyCast - Weather Dashboard - React.js', 
-    emoji: '💰', 
+    emoji: '🌤️', 
     desc: 'A fully functional, modern, and animated Weather Dashboard built with React, Vite, Framer Motion, OpenWeatherMap, and WeatherAPI. Features include real-time weather data, a 5-day forecast, hourly forecast, stunning dynamic backgrounds, temperature unit toggling, and geolocation support.', 
     tech: ['React.js', 'Framer Motion', 'OpenWeatherMap', 'WeatherAPI'], 
     live: 'https://farmanullah1.github.io/SkyCast--Weather-Dashboard/', 
@@ -24,8 +24,8 @@ const PROJECTS = [
   },
   { 
     title: 'Taskly - Modern Todo Task Manager App - React.js', 
-    emoji: '💰', 
-    desc: 'A fully functional, modern, and animated Todo Task Manager App built with React, Vite, Framer Motion, and Tailwind CSS. Features include real-time weather data, a 5-day forecast, hourly forecast, stunning dynamic backgrounds, temperature unit toggling, and geolocation support.', 
+    emoji: '📝', 
+    desc: 'A sleek and efficient task management application with a beautiful glassmorphism UI, task persistence, and smooth Framer Motion animations.', 
     tech: ['React.js', 'Framer Motion', 'Tailwind CSS'], 
     live: 'https://farmanullah1.github.io/Taskly---Modern-Todo-Task-Manager-App/', 
     code: 'https://github.com/farmanullah1/Taskly---Modern-Todo-Task-Manager-App'
@@ -68,7 +68,7 @@ const PROJECTS = [
     title: 'Memory Card Matching Game', 
     emoji: '📖', 
     desc: 'A beautiful, fully responsive memory card matching game built with React, TypeScript, and Vite. This game features smooth animations, multiple themes, sound effects, and high score tracking.', 
-    tech: ['React', 'TypeScript', 'Vite'], 
+    tech: ['React.js', 'TypeScript', 'Vite'], 
     live: 'https://farmanullah1.github.io/Memory-Card-Matching-Game/', 
     code: 'https://github.com/farmanullah1/Memory-Card-Matching-Game' 
   },
@@ -157,22 +157,15 @@ const FILTERS = ['All', 'MERN', 'React.js', '.NET', 'Node.js', 'TypeScript', 'Ja
 const match = (p, f) => {
   if (f === 'All') return true;
   
-  // Logic for MERN (checks if it contains the core stack components)
-  if (f === 'MERN') return p.tech.includes('MongoDB') && p.tech.includes('React.js');
+  if (f === 'MERN Stack') return p.tech.includes('MongoDB') && p.tech.includes('React.js');
   
-  // Logic for .NET ecosystem
   if (f === '.NET') return p.tech.includes('C#') || p.tech.includes('ASP.NET Core') || p.tech.includes('Web API');
   
-  // Logic for TypeScript
-  if (f === 'TypeScript') return p.tech.includes('TypeScript');
+  if (f === 'Games') {
+    const gameKeywords = ['game', 'tetris', 'tic-tac-toe', 'scissors', 'matching'];
+    return gameKeywords.some(kw => p.title.toLowerCase().includes(kw));
+  }
   
-  // Logic for JavaScript (catches vanilla JS projects)
-  if (f === 'JavaScript') return p.tech.includes('JavaScript');
-  
-  // Logic for Web Basics (HTML/CSS focused)
-  if (f === 'Web Basics') return p.tech.includes('HTML') || p.tech.includes('CSS');
-  
-  // Default string match for React.js, Node.js, etc.
   return p.tech.includes(f);
 };
 
