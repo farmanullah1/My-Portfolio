@@ -746,14 +746,18 @@ body.light .hero-float-badge {
 /* ── 9. PROJECTS ────────────────────────────────────────────── */
 .filter-container { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
 .filter-btn {
-  padding:9px 24px; border:1px solid rgba(170,100,255,.35); border-radius:30px;
-  background:transparent; color:var(--text-dim); font-weight:700; font-size:.9rem;
+  padding:10px 22px; border:1px solid rgba(170,100,255,.35); border-radius:30px;
+  background:rgba(15, 7, 36, 0.45); color:var(--text-dim); font-weight:700; font-size:.9rem;
   cursor:pointer; transition:all .3s var(--spring); font-family:'Outfit',sans-serif;
+  display: flex; align-items: center; gap: 10px;
 }
+.filter-icon { font-size: 1.1rem; opacity: 0.8; transition: transform 0.3s; }
+.filter-btn:hover .filter-icon { transform: scale(1.2); }
 .filter-btn:hover, .filter-btn.active {
   background:var(--grad); color:#fff; border-color:transparent;
   box-shadow:0 6px 22px var(--glow1); transform:translateY(-3px) scale(1.04);
 }
+.filter-btn.active .filter-icon { opacity: 1; }
 
 .project-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:26px; max-width:1340px; margin:0 auto; }
 
@@ -790,14 +794,19 @@ body.light .hero-float-badge {
 }
 .project-featured-badge {
   position:absolute; top:14px; right:14px;
-  padding:4px 13px; background:var(--grad); border-radius:20px;
+  padding:6px 14px; background:var(--grad); border-radius:20px;
   font-size:.74rem; font-weight:800; color:#fff;
   box-shadow:0 4px 14px var(--glow1);
-  animation:badgePop 2s ease-in-out infinite;
+  display: flex; align-items: center; gap: 6px;
+  z-index: 10;
 }
-@keyframes badgePop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
-
-.project-emoji { font-size:2.2rem; margin-bottom:12px; display:block; animation:emojiWiggle 4s ease-in-out infinite; }
+.project-icon { 
+  font-size:2.5rem; margin-bottom:18px; display:block; 
+  color: var(--c1);
+  filter: drop-shadow(0 0 10px var(--glow1));
+  transition: transform 0.4s var(--spring);
+}
+.project-card:hover .project-icon { transform: scale(1.15) rotate(6deg); color: var(--c3); }
 @keyframes emojiWiggle { 0%,100%{transform:rotate(0deg)} 25%{transform:rotate(-5deg)} 75%{transform:rotate(5deg)} }
 
 .project-card h3 { font-size:1.15rem; font-weight:800; margin-bottom:10px; color:var(--text); padding-right:64px; line-height:1.3; }
