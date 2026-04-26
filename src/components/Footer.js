@@ -12,7 +12,7 @@ const LINKS   = [
 const SOCIALS = [
   { href:'https://github.com/farmanullah1',                 icon:<FaGithub />,   label:'GitHub'   },
   { href:'https://www.linkedin.com/in/farmanullah-ansari',  icon:<FaLinkedin />, label:'LinkedIn' },
-  { href:'https://twitter.com',                             icon:<FaTwitter />,  label:'Twitter'  },
+  { href:'https://x.com/farmanullah9088',                   icon:<FaTwitter />,  label:'Twitter'  },
 ];
 
 const Footer = () => (

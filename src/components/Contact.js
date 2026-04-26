@@ -6,7 +6,7 @@ const SOCIALS = [
   { href:'mailto:farmanullahansari999@gmail.com',           icon:<FaEnvelope />, label:'Email',    text:'farmanullahansari999@gmail.com' },
   { href:'https://www.linkedin.com/in/farmanullah-ansari',  icon:<FaLinkedin />, label:'LinkedIn', text:'linkedin.com/in/farmanullah-ansari' },
   { href:'https://github.com/farmanullah1',                 icon:<FaGithub />,   label:'GitHub',   text:'github.com/farmanullah1' },
-  { href:'https://twitter.com',                             icon:<FaTwitter />,  label:'Twitter',  text:'@farmanullah' },
+  { href:'https://x.com/farmanullah9088',                   icon:<FaTwitter />,  label:'Twitter',  text:'@farmanullah9088' },
 ];
 
 const Contact = () => {
