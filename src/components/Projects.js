@@ -136,18 +136,18 @@ const PROJECTS = [
     code: 'https://github.com/farmanullah1/Snake-Game' 
   },
   { 
-    title: 'MyPortfolio - 2024', 
+    title: 'Old Portfolio - 2024', 
     emoji: '💻', 
     desc: 'My 2024 Portfolio Website built with HTML,CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
-    tech: ['HTML', 'CSS', 'JavaScript'], 
+    tech: ['HTML', 'CSS', 'JavaScript','Web Basics'], 
     live: 'https://farmanullah1.github.io/Portfolio-2024/', 
     code: 'https://github.com/farmanullah1/Portfolio-2024' 
   },
   { 
-    title: 'MyPortfolio - 2024', 
+    title: 'MyPortfolio - Latest', 
     emoji: '💻', 
-    desc: 'My 2024 Portfolio Website built with HTML,CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
-    tech: ['HTML', 'CSS', 'JavaScript'], 
+    desc: 'My Portfolio Website built with React.js, emphasizing clean code architecture and responsive controls.', 
+    tech: ['React.js', 'CSS', 'JavaScript','GSAP'], 
     live:  'https://farmanullah1.github.io/My-Portfolio/', 
     code: 'https://github.com/farmanullah1/My-Portfolio' 
   },
