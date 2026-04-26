@@ -56,14 +56,7 @@ const PROJECTS = [
     live: 'https://farmanullah1.github.io/Kurrent-News-Top-Headlines-Tech-Politics-Sports/', 
     code: 'https://github.com/farmanullah1/Kurrent-News-Top-Headlines-Tech-Politics-Sports' 
   },
-  { 
-    title: 'Portfolio - HTML CSS JS', 
-    emoji: '💻', 
-    desc: 'My Old portfolio website made with HTML, CSS and JavaScript.', 
-    tech: ['HTML', 'CSS', 'JavaScript','GSAP'], 
-    live: 'https://farmanullah1.github.io/Portfolio-HTML-CSS-JS/', 
-    code: 'https://github.com/farmanullah1/Portfolio-HTML-CSS-JS' 
-  },
+  
   { 
     title: 'Memory Card Matching Game', 
     emoji: '📖', 
@@ -136,7 +129,7 @@ const PROJECTS = [
     code: 'https://github.com/farmanullah1/Snake-Game' 
   },
   { 
-    title: 'Old Portfolio - 2024', 
+    title: 'Old Portfolio - (2024)', 
     emoji: '💻', 
     desc: 'My 2024 Portfolio Website built with HTML,CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
     tech: ['HTML', 'CSS', 'JavaScript','Web Basics'], 
@@ -144,7 +137,15 @@ const PROJECTS = [
     code: 'https://github.com/farmanullah1/Portfolio-2024' 
   },
   { 
-    title: 'MyPortfolio - Latest', 
+    title: 'Portfolio - HTML CSS JS (2025)', 
+    emoji: '💻', 
+    desc: 'My Old portfolio website made with HTML, CSS and JavaScript.', 
+    tech: ['HTML', 'CSS', 'JavaScript','GSAP'], 
+    live: 'https://farmanullah1.github.io/Portfolio-HTML-CSS-JS/', 
+    code: 'https://github.com/farmanullah1/Portfolio-HTML-CSS-JS' 
+  },
+  { 
+    title: 'MyPortfolio - (Latest - 2026)', 
     emoji: '💻', 
     desc: 'My Portfolio Website built with React.js, emphasizing clean code architecture and responsive controls.', 
     tech: ['React.js', 'CSS', 'JavaScript','GSAP'], 
