@@ -513,6 +513,14 @@ section:hover h2::after { width:96px; }
   z-index: 10;
   transition: box-shadow .3s, background .3s, border-color .3s;
   letter-spacing: .2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.badge-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
 }
 /* Shimmer on hover */
 .hero-float-badge:hover {

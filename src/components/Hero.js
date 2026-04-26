@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { 
+  FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaAws, FaMicrosoft, FaChartBar 
+} from 'react-icons/fa';
+import { 
+  SiReact, SiNodedotjs, SiTypescript, SiDotnet, 
+  SiDocker, SiLinux, SiGithub, SiPython 
+} from 'react-icons/si';
 import profilePic from '../assets/profile2.png';
 import cvFile from '../assets/Farmanullah Ansari CV - All.pdf';
 
@@ -35,17 +41,17 @@ const STATS = [
 
 /* Enhanced float badges — cleaner labels, better orbital positions */
 const FLOAT_BADGES = [
-  { label: '⚛️ React.js',      cls: 'fb--1',  dy: [-12, 0, -12], dur: 3.0 },
-  { label: '🟢 Node.js',       cls: 'fb--2',  dy: [-9,  0,  -9], dur: 3.8 },
-  { label: '🌩️ AWS',           cls: 'fb--3',  dy: [ 11, 0,  11], dur: 3.3 },
-  { label: '📘 TypeScript',    cls: 'fb--4',  dy: [ 10, 0,  10], dur: 3.5 },
-  { label: '🎯 C# / .NET',     cls: 'fb--5',  dy: [-14, 0, -14], dur: 4.0 },
-  { label: '🚀 ASP.NET Core',  cls: 'fb--6',  dy: [-8,  0,  -8], dur: 3.2 },
-  { label: '🐳 Docker',        cls: 'fb--7',  dy: [ 12, 0,  12], dur: 3.6 },
-  { label: '🐧 Linux',         cls: 'fb--8',  dy: [  7, 0,   7], dur: 3.9 },
-  { label: '🗂️ Git & GitHub',  cls: 'fb--9',  dy: [-11, 0, -11], dur: 3.4 },
-  { label: '📊 Power BI',      cls: 'fb--10', dy: [-13, 0, -13], dur: 4.2 },
-  { label: '🐍 Python',        cls: 'fb--11', dy: [  9, 0,   9], dur: 3.7 },
+  { text: 'React.js',      icon: <SiReact color="#61DAFB" />,      cls: 'fb--1',  dy: [-12, 0, -12], dur: 3.0 },
+  { text: 'Node.js',       icon: <SiNodedotjs color="#339933" />,  cls: 'fb--2',  dy: [-9,  0,  -9], dur: 3.8 },
+  { text: 'AWS',           icon: <FaAws color="#FF9900" />,        cls: 'fb--3',  dy: [ 11, 0,  11], dur: 3.3 },
+  { text: 'TypeScript',    icon: <SiTypescript color="#3178C6" />, cls: 'fb--4',  dy: [ 10, 0,  10], dur: 3.5 },
+  { text: 'C# / .NET',     icon: <FaMicrosoft color="#00A4EF" />,  cls: 'fb--5',  dy: [-14, 0, -14], dur: 4.0 },
+  { text: 'ASP.NET Core',  icon: <SiDotnet color="#512BD4" />,     cls: 'fb--6',  dy: [-8,  0,  -8], dur: 3.2 },
+  { text: 'Docker',        icon: <SiDocker color="#2496ED" />,     cls: 'fb--7',  dy: [ 12, 0,  12], dur: 3.6 },
+  { text: 'Linux',         icon: <SiLinux color="#FCC624" />,      cls: 'fb--8',  dy: [  7, 0,   7], dur: 3.9 },
+  { text: 'Git & GitHub',  icon: <SiGithub color="#F05032" />,     cls: 'fb--9',  dy: [-11, 0, -11], dur: 3.4 },
+  { text: 'Power BI',      icon: <FaChartBar color="#F2C811" />,   cls: 'fb--10', dy: [-13, 0, -13], dur: 4.2 },
+  { text: 'Python',        icon: <SiPython color="#3776AB" />,     cls: 'fb--11', dy: [  9, 0,   9], dur: 3.7 },
 ];
 
 const container = {
@@ -172,7 +178,8 @@ const Hero = () => {
             <motion.div key={i} className={`hero-float-badge ${b.cls}`}
               animate={{ y: b.dy }}
               transition={{ duration: b.dur, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}>
-              {b.label}
+              <span className="badge-icon">{b.icon}</span>
+              {b.text}
             </motion.div>
           ))}
 
