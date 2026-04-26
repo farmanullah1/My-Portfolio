@@ -1,10 +1,8 @@
 import { 
-  FaGithub, FaExternalLinkAlt, FaStar, FaGamepad, FaReact, 
-  FaDatabase, FaLayerGroup, FaJs, FaCode
+  FaStar, FaReact, FaDatabase, FaLayerGroup, FaJs, FaCode
 } from 'react-icons/fa';
 import { 
-  SiMongodb, SiDotnet, SiTypescript, SiJavascript, SiTailwindcss, 
-  SiNodedotjs, SiExpress, SiGithub 
+  SiMongodb, SiDotnet, SiTypescript, SiJavascript, SiTailwindcss, SiGithub 
 } from 'react-icons/si';
 import { 
   HiOutlineExternalLink, HiOutlineGlobe, HiOutlineTerminal, 
