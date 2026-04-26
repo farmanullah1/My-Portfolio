@@ -14,6 +14,24 @@ const PROJECTS = [
     featured: true 
   },
   { 
+    title: 'SkyCast - Weather Dashboard - React.js', 
+    emoji: '💰', 
+    desc: 'A fully functional, modern, and animated Weather Dashboard built with React, Vite, Framer Motion, OpenWeatherMap, and WeatherAPI. Features include real-time weather data, a 5-day forecast, hourly forecast, stunning dynamic backgrounds, temperature unit toggling, and geolocation support.', 
+    tech: ['React.js', 'Framer Motion', 'OpenWeatherMap', 'WeatherAPI'], 
+    live: 'https://farmanullah1.github.io/SkyCast--Weather-Dashboard/', 
+    code: 'https://github.com/farmanullah1/SkyCast--Weather-Dashboard'
+    
+  },
+  { 
+    title: 'Taskly - Modern Todo Task Manager App - React.js', 
+    emoji: '💰', 
+    desc: 'A fully functional, modern, and animated Todo Task Manager App built with React, Vite, Framer Motion, and Tailwind CSS. Features include real-time weather data, a 5-day forecast, hourly forecast, stunning dynamic backgrounds, temperature unit toggling, and geolocation support.', 
+    tech: ['React.js', 'Framer Motion', 'Tailwind CSS'], 
+    live: 'https://farmanullah1.github.io/Taskly---Modern-Todo-Task-Manager-App/', 
+    code: 'https://github.com/farmanullah1/Taskly---Modern-Todo-Task-Manager-App'
+  },
+  
+  { 
     title: 'BalanceByte - ASP.NET Core', 
     emoji: '💰', 
     desc: 'Simple mobile balance checker with smooth UI transitions that tells you how much total balance you will get if you load a specific amount (e.g., load 100)', 
@@ -116,6 +134,22 @@ const PROJECTS = [
     tech: ['TypeScript', 'CSS', 'JavaScript'], 
     live: 'https://farmanullah1.github.io/Snake-Game/', 
     code: 'https://github.com/farmanullah1/Snake-Game' 
+  },
+  { 
+    title: 'MyPortfolio - 2024', 
+    emoji: '💻', 
+    desc: 'My 2024 Portfolio Website built with HTML,CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript'], 
+    live: 'https://farmanullah1.github.io/Portfolio-2024/', 
+    code: 'https://github.com/farmanullah1/Portfolio-2024' 
+  },
+  { 
+    title: 'MyPortfolio - 2024', 
+    emoji: '💻', 
+    desc: 'My 2024 Portfolio Website built with HTML,CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript'], 
+    live:  'https://farmanullah1.github.io/My-Portfolio/', 
+    code: 'https://github.com/farmanullah1/My-Portfolio' 
   },
 ];
 const FILTERS = ['All', 'MERN', 'React.js', '.NET', 'Node.js', 'TypeScript', 'JavaScript', 'Web Basics'];
