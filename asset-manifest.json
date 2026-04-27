@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.efc39e3b.css",
-    "main.js": "/My-Portfolio/static/js/main.68d006c2.js",
+    "main.js": "/My-Portfolio/static/js/main.f34095d2.js",
     "static/js/453.3a92521d.chunk.js": "/My-Portfolio/static/js/453.3a92521d.chunk.js",
     "static/media/Farmanullah Ansari CV - All.pdf": "/My-Portfolio/static/media/Farmanullah Ansari CV - All.64c0a0a55e4f885b430d.pdf",
     "static/media/profile2.webp": "/My-Portfolio/static/media/profile2.d6dc01b7f8cbb5f2038a.webp",
     "index.html": "/My-Portfolio/index.html",
     "main.efc39e3b.css.map": "/My-Portfolio/static/css/main.efc39e3b.css.map",
-    "main.68d006c2.js.map": "/My-Portfolio/static/js/main.68d006c2.js.map",
+    "main.f34095d2.js.map": "/My-Portfolio/static/js/main.f34095d2.js.map",
     "453.3a92521d.chunk.js.map": "/My-Portfolio/static/js/453.3a92521d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.efc39e3b.css",
-    "static/js/main.68d006c2.js"
+    "static/js/main.f34095d2.js"
   ]
 }
