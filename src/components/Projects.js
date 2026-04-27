@@ -38,7 +38,7 @@ const PROJECTS = [
     title: 'SkyCast - Weather Dashboard - React.js', 
     icon: <HiOutlineSun />, 
     desc: 'A fully functional, modern, and animated Weather Dashboard built with React, Vite, Framer Motion, OpenWeatherMap, and WeatherAPI. Features include real-time weather data, a 5-day forecast, hourly forecast, stunning dynamic backgrounds, temperature unit toggling, and geolocation support.', 
-    tech: ['React.js', 'Framer Motion', 'OpenWeatherMap', 'WeatherAPI'], 
+    tech: ['React.js', 'Framer Motion', 'Tailwind CSS'],  
     live: 'https://farmanullah1.github.io/SkyCast--Weather-Dashboard/', 
     code: 'https://github.com/farmanullah1/SkyCast--Weather-Dashboard'
   },
