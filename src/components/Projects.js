@@ -27,6 +27,14 @@ const PROJECTS = [
     featured: true 
   },
   { 
+    title: 'Nexa-Habit-Habit-Tracker-App', 
+    icon: <HiOutlineSun />, 
+    desc: 'Nexa Habit is a modern, high-performance habit tracking web application designed with a Glassmorphism aesthetic (inspired by iOS design language). It features soft gradients, deep blur effects, and smooth animations to provide a calm and focused productivity experience.', 
+    tech: ['React.js', 'Framer Motion', 'OpenWeatherMap', 'WeatherAPI'], 
+    live: 'https://farmanullah1.github.io/Nexa-Habit-Habit-Tracker-App/', 
+    code: 'https://github.com/farmanullah1/Nexa-Habit-Habit-Tracker-App'
+  },
+  { 
     title: 'SkyCast - Weather Dashboard - React.js', 
     icon: <HiOutlineSun />, 
     desc: 'A fully functional, modern, and animated Weather Dashboard built with React, Vite, Framer Motion, OpenWeatherMap, and WeatherAPI. Features include real-time weather data, a 5-day forecast, hourly forecast, stunning dynamic backgrounds, temperature unit toggling, and geolocation support.', 
