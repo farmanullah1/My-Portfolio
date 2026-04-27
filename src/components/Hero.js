@@ -7,7 +7,7 @@ import {
   SiReact, SiNodedotjs, SiTypescript, SiDotnet, 
   SiDocker, SiLinux, SiGithub, SiPython 
 } from 'react-icons/si';
-import profilePic from '../assets/profile2.png';
+import profilePic from '../assets/profile2.webp';
 import cvFile from '../assets/Farmanullah Ansari CV - All.pdf';
 
 const ROLES = [
