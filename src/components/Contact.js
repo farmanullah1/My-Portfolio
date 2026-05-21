@@ -18,12 +18,15 @@ const Contact = () => {
 
   const submit = e => {
     e.preventDefault(); setSending(true);
+    const mailtoUrl = `mailto:farmanullahansari999@gmail.com?subject=${encodeURIComponent(form.subject||'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
+    const link = document.createElement('a');
+    link.href = mailtoUrl;
+    link.click();
     setTimeout(() => {
-      window.location.href = `mailto:farmanullahansari999@gmail.com?subject=${encodeURIComponent(form.subject||'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
       setToast('success'); setSending(false);
       setForm({ name:'', email:'', subject:'', message:'' });
       setTimeout(() => setToast(null), 4000);
-    }, 600);
+    }, 500);
   };
 
   return (
@@ -56,7 +59,7 @@ const Contact = () => {
 
         <motion.div className="contact-form-wrap"
           initial={{ opacity:0, x:30 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }} transition={{ delay:.2 }}>
-          <form className="contact-form" onSubmit={submit}>
+          <form className="contact-form" onSubmit={submit} aria-label="Contact form">
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
@@ -83,15 +86,17 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      <AnimatePresence>
-        {toast && (
-          <motion.div className={`toast toast--${toast}`}
-            initial={{ opacity:0, y:40, scale:.9 }} animate={{ opacity:1, y:0, scale:1 }} exit={{ opacity:0, y:20, scale:.9 }}
-            transition={{ type:'spring', stiffness:220, damping:18 }}>
-            {toast==='success' ? "✅ Message sent! I'll get back to you soon." : "❌ Something went wrong. Please try again."}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div aria-live="polite" aria-atomic="true">
+        <AnimatePresence>
+          {toast && (
+            <motion.div className={`toast toast--${toast}`} role="status"
+              initial={{ opacity:0, y:40, scale:.9 }} animate={{ opacity:1, y:0, scale:1 }} exit={{ opacity:0, y:20, scale:.9 }}
+              transition={{ type:'spring', stiffness:220, damping:18 }}>
+              {toast==='success' ? "Message sent! I'll get back to you soon." : "Something went wrong. Please try again."}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.section>
   );
 };

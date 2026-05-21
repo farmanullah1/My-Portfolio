@@ -81,6 +81,25 @@ body.light {
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 
+/* Skip to content — accessibility */
+.skip-to-content {
+  position:fixed; top:-100px; left:16px;
+  padding:12px 24px; background:var(--grad); color:#fff;
+  border-radius:0 0 var(--rsm) var(--rsm);
+  font-weight:700; font-size:.95rem; z-index:10000;
+  transition:top .3s var(--ease);
+  text-decoration:none;
+}
+.skip-to-content:focus { top:0; outline:none; box-shadow:0 4px 22px var(--glow1); }
+
+/* Focus-visible — keyboard users */
+:focus-visible {
+  outline:2px solid var(--c3);
+  outline-offset:3px;
+  border-radius:4px;
+}
+:focus:not(:focus-visible) { outline:none; }
+
 body {
   font-family: 'Outfit', system-ui, sans-serif;
   background: var(--bg);
@@ -1566,4 +1585,27 @@ body.light .timeline-content::before { border-right-color: rgba(124,58,237,.12);
   .hero-role           { font-size:.9rem; }
   .mobile-nav-links a  { font-size:1.4rem; }
   .cert-stats-bar      { padding:12px 14px; }
+}
+
+/* ── 18. REDUCED MOTION ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none; }
+  .scroll-progress-bar { transition: none; }
+}
+
+/* ── 19. PRINT ──────────────────────────────────────────────── */
+@media print {
+  .navbar, .scroll-progress-track, .back-to-top, .hero-bg,
+  .hero-float-badge, .hero-ring, .hero-scroll-cue,
+  .mobile-controls, .mobile-menu { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  section { border: none; padding: 24px 0; }
+  a { color: #333; text-decoration: underline; }
+  .hero-image img { box-shadow: none !important; filter: none !important; }
 }

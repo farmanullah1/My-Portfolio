@@ -253,14 +253,16 @@ const Projects = () => {
       <motion.h2 initial={{ opacity:0, y:-20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}>
         Featured Projects
       </motion.h2>
-      <div className="filter-container">
+      <div className="filter-container" role="toolbar" aria-label="Project category filters">
         {FILTERS.map(f => (
           <motion.button key={f.name} className={`filter-btn${filter===f.name?' active':''}`}
             onClick={() => {
               setFilter(f.name);
               setVisibleCount(8);
-            }} whileHover={{ scale:1.06 }} whileTap={{ scale:.94 }}>
-            <span className="filter-icon">{f.icon}</span>
+            }}
+            aria-pressed={filter===f.name}
+            whileHover={{ scale:1.06 }} whileTap={{ scale:.94 }}>
+            <span className="filter-icon" aria-hidden="true">{f.icon}</span>
             {f.name}
           </motion.button>
         ))}

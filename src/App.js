@@ -45,15 +45,17 @@ function App() {
     <div className="App">
       <ScrollProgress />
       <Navbar theme={theme} toggleTheme={toggleTheme} activeSection={activeSection} />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Certifications />
-      <WhyMe />
-      <Blog />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Certifications />
+        <WhyMe />
+        <Blog />
+        <Contact />
+      </main>
       <Footer />
       <BackToTop />
     </div>
