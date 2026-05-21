@@ -33,8 +33,8 @@ const About = () => (
           or writing technical articles to share knowledge with the community.
         </p>
         <div className="about-buttons">
-          <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-primary">Download My CV</a>
-          <a href="#contact" className="btn-secondary">Hire Me</a>
+          <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-primary" aria-label="Download Farmanullah Ansari's CV as PDF">Download My CV</a>
+          <a href="#contact" className="btn-secondary" aria-label="Navigate to contact section to hire me">Hire Me</a>
         </div>
       </motion.div>
 

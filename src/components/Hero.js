@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { 
   FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaAws, FaMicrosoft, FaChartBar 
@@ -145,7 +145,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.65 + i * 0.12, type: 'spring', stiffness: 220 }}>
-                <span className="stat-num">{s.num}</span>
+                <HeroCounter value={s.num} />
                 <span className="stat-label">{s.label}</span>
               </motion.div>
             ))}
@@ -190,7 +190,7 @@ const Hero = () => {
             <div className="hero-ring hero-ring--glow"   />
             <div className="hero-ring hero-ring--pulse"  />
             <div className="hero-image">
-              <img src={profilePic} alt="Farmanullah Ansari" />
+              <img src={profilePic} alt="Farmanullah Ansari" loading="eager" width="400" height="400" />
             </div>
           </motion.div>
         </motion.div>
@@ -205,6 +205,45 @@ const Hero = () => {
       </motion.div>
     </motion.header>
   );
+};
+
+const HeroCounter = ({ value }) => {
+  const numericPart = parseInt(value, 10);
+  const suffix = value.replace(String(numericPart), '');
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef(null);
+
+  const startCounting = useCallback(() => setStarted(true), []);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) startCounting(); },
+      { threshold: 0.5 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [startCounting]);
+
+  useEffect(() => {
+    if (!started || numericPart === 0) return;
+    let current = 0;
+    const step = Math.max(1, Math.floor(numericPart / 30));
+    const interval = setInterval(() => {
+      current += step;
+      if (current >= numericPart) {
+        setCount(numericPart);
+        clearInterval(interval);
+      } else {
+        setCount(current);
+      }
+    }, 40);
+    return () => clearInterval(interval);
+  }, [started, numericPart]);
+
+  return <span className="stat-num" ref={ref}>{count}{suffix}</span>;
 };
 
 export default Hero;

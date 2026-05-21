@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,16 +13,19 @@ import Footer from './components/Footer';
 import Experience from './components/Experience';
 import ScrollProgress from './components/Scrollprogress';
 import BackToTop from './components/Backtotop';
+import Preloader from './components/Preloader';
+
+const GitHubStats = lazy(() => import('./components/GitHubStats'));
 
 function App() {
   const [theme, setTheme] = useState('dark');
   const [activeSection, setActiveSection] = useState('home');
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
 
-  // Track active section for nav highlight
   useEffect(() => {
     const sections = document.querySelectorAll('section[id], header[id]');
     const observer = new IntersectionObserver(
@@ -40,6 +43,11 @@ function App() {
   }, []);
 
   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+  const handlePreloaderComplete = useCallback(() => setLoaded(true), []);
+
+  if (!loaded) {
+    return <Preloader onComplete={handlePreloaderComplete} />;
+  }
 
   return (
     <div className="App">
@@ -51,6 +59,9 @@ function App() {
       <Projects />
       <Experience />
       <Certifications />
+      <Suspense fallback={null}>
+        <GitHubStats />
+      </Suspense>
       <WhyMe />
       <Blog />
       <Contact />
