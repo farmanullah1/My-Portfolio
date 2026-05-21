@@ -10,15 +10,17 @@ import {
   HiOutlineDuplicate, HiOutlineServer, HiOutlinePencil, 
   HiOutlineSun, HiOutlineClipboardList, HiOutlineCurrencyDollar,
   HiOutlineUserGroup, HiOutlineViewGrid, HiOutlineArrowCircleUp,
-  HiOutlineHand, HiOutlineX
+  HiOutlineHand, HiOutlineX, HiOutlineShoppingBag, HiOutlineCube
 } from 'react-icons/hi';
 import { IoGameControllerOutline } from 'react-icons/io5';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const PROJECTS = [
+ 
+  
   { 
-    title: 'Gadd Kaam — SkillSwap Pakistan -MERN Stack', 
+    title: 'Gadd Kaam — SkillSwap Pakistan -MERN Stack - FYP', 
     icon: <HiOutlineUserGroup />, 
     desc: 'A secure, MERN-stack platform for cashless skill exchanging featuring CNIC verification and real-time trading.', 
     tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js'], 
@@ -27,12 +29,31 @@ const PROJECTS = [
     featured: true 
   },
   { 
+    title: 'MindBook - Social Media Platform', 
+    icon: <HiOutlineUserGroup />, 
+    desc: 'A comprehensive social networking platform built with the MERN stack, featuring user authentication, post creation, and real-time interactions.', 
+    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript'], 
+    live: 'https://farmanullah1.github.io/MindBook---MERN/', 
+    code: 'https://github.com/farmanullah1/MindBook---MERN',
+    featured: true
+  },
+  
+  { 
     title: 'Nexa-Habit-Habit-Tracker-App', 
     icon: <HiOutlineSun />, 
     desc: 'Nexa Habit is a modern, high-performance habit tracking web application designed with a Glassmorphism aesthetic (inspired by iOS design language). It features soft gradients, deep blur effects, and smooth animations to provide a calm and focused productivity experience.', 
     tech: ['React.js', 'Framer Motion', 'OpenWeatherMap', 'WeatherAPI'], 
     live: 'https://farmanullah1.github.io/Nexa-Habit-Habit-Tracker-App/', 
     code: 'https://github.com/farmanullah1/Nexa-Habit-Habit-Tracker-App'
+  },
+   { 
+    title: 'fridge.pk - E-commerce Platform', 
+    icon: <HiOutlineShoppingBag />, 
+    desc: 'A specialized e-commerce platform for home appliances, featuring a modern React-based UI, product filtering, and a seamless shopping experience.', 
+    tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'], 
+    live: 'https://farmanullah1.github.io/fridge.pk-E-commerce-platform-React/', 
+    code: 'https://github.com/farmanullah1/fridge.pk-E-commerce-platform-React', 
+    featured: false 
   },
   { 
     title: 'SkyCast - Weather Dashboard - React.js', 
@@ -49,6 +70,15 @@ const PROJECTS = [
     tech: ['React.js', 'Framer Motion', 'Tailwind CSS'], 
     live: 'https://farmanullah1.github.io/Taskly---Modern-Todo-Task-Manager-App/', 
     code: 'https://github.com/farmanullah1/Taskly---Modern-Todo-Task-Manager-App'
+  },
+  { 
+    title: 'KALEIDO - Modern eCommerce Store', 
+    icon: <HiOutlineCube />, 
+    desc: 'A premium, high-performance eCommerce application leveraging the MERN stack for a robust shopping experience with advanced state management.', 
+    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript'], 
+    live: 'https://farmanullah1.github.io/KALEIDO-eCommerce--MERN/', 
+    code: 'https://github.com/farmanullah1/KALEIDO-eCommerce--MERN',
+    featured: false
   },
   { 
     title: 'BalanceByte - ASP.NET Core', 
