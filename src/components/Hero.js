@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { 
-  FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaAws, FaMicrosoft, FaChartBar 
+  FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaAws, FaMicrosoft, FaChartBar, FaTwitter 
 } from 'react-icons/fa';
 import { 
   SiReact, SiNodedotjs, SiTypescript, SiDotnet, 
@@ -31,6 +31,7 @@ const ROLES = [
 const SOCIALS = [
   { href: 'https://github.com/farmanullah1',                icon: <FaGithub />,   label: 'GitHub'   },
   { href: 'https://www.linkedin.com/in/farmanullah-ansari', icon: <FaLinkedin />, label: 'LinkedIn' },
+  { href: 'https://x.com/farmanullah9088',                  icon: <FaTwitter />,  label: 'Twitter'  },
 ];
 
 const STATS = [
@@ -190,7 +191,7 @@ const Hero = () => {
             <div className="hero-ring hero-ring--glow"   />
             <div className="hero-ring hero-ring--pulse"  />
             <div className="hero-image">
-              <img src={profilePic} alt="Farmanullah Ansari" />
+              <img src={profilePic} alt="Farmanullah Ansari — Full-Stack Software Engineer" loading="eager" fetchPriority="high" />
             </div>
           </motion.div>
         </motion.div>

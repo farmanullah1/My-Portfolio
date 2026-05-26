@@ -7,6 +7,7 @@ const LINKS   = [
   { label:'Projects',       href:'#projects'       },
   { label:'Experience',     href:'#experience'     },
   { label:'Certifications', href:'#certifications' },
+  { label:'Why Me',         href:'#why-me'         },
   { label:'Contact',        href:'#contact'        },
 ];
 const SOCIALS = [
