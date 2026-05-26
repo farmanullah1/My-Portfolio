@@ -41,7 +41,7 @@ const PROJECTS = [
   { 
     title: 'Nexa-Habit-Habit-Tracker-App', 
     icon: <HiOutlineSun />, 
-    desc: 'Nexa Habit is a modern, high-performance habit tracking web application designed with a Glassmorphism aesthetic (inspired by iOS design language). It features soft gradients, deep blur effects, and smooth animations to provide a calm and focused productivity experience.', 
+    desc: 'A modern habit tracking app with a glassmorphism aesthetic, featuring soft gradients, blur effects, and smooth animations for a calm productivity experience.', 
     tech: ['React.js', 'Framer Motion', 'OpenWeatherMap', 'WeatherAPI'], 
     live: 'https://farmanullah1.github.io/Nexa-Habit-Habit-Tracker-App/', 
     code: 'https://github.com/farmanullah1/Nexa-Habit-Habit-Tracker-App'
@@ -58,7 +58,7 @@ const PROJECTS = [
   { 
     title: 'SkyCast - Weather Dashboard - React.js', 
     icon: <HiOutlineSun />, 
-    desc: 'A fully functional, modern, and animated Weather Dashboard built with React, Vite, Framer Motion, OpenWeatherMap, and WeatherAPI. Features include real-time weather data, a 5-day forecast, hourly forecast, stunning dynamic backgrounds, temperature unit toggling, and geolocation support.', 
+    desc: 'A modern weather dashboard with real-time data, 5-day and hourly forecasts, dynamic backgrounds, and geolocation support.', 
     tech: ['React.js', 'Framer Motion', 'Tailwind CSS'],  
     live: 'https://farmanullah1.github.io/SkyCast--Weather-Dashboard/', 
     code: 'https://github.com/farmanullah1/SkyCast--Weather-Dashboard'
@@ -107,7 +107,7 @@ const PROJECTS = [
   { 
     title: 'Memory Card Matching Game', 
     icon: <HiOutlinePuzzle />, 
-    desc: 'A beautiful, fully responsive memory card matching game built with React, TypeScript, and Vite. This game features smooth animations, multiple themes, sound effects, and high score tracking.', 
+    desc: 'A responsive memory card matching game with smooth animations, multiple themes, sound effects, and high score tracking.', 
     tech: ['React.js', 'TypeScript', 'Vite'], 
     live: 'https://farmanullah1.github.io/Memory-Card-Matching-Game/', 
     code: 'https://github.com/farmanullah1/Memory-Card-Matching-Game' 
@@ -131,7 +131,7 @@ const PROJECTS = [
   { 
     title: 'BalanceWave - React', 
     icon: <HiOutlineDeviceTablet />, 
-    desc: 'Create a mobile balance checker that lets a user enter an amount they want to load (for example, 100), and then shows how much total balance they will get after loading that amount. The interface should be simple, modern, and mobile‑friendly, with smooth transitions.', 
+    desc: 'A sleek mobile balance checker that calculates total balance after loading a given amount, with a modern UI and smooth transitions.', 
     tech: ['React.js', 'Framer Motion', 'Tailwind CSS'], 
     live: 'https://farmanullah1.github.io/BalanceWave-React/', 
     code: 'https://github.com/farmanullah1/BalanceWave-React' 
@@ -147,7 +147,7 @@ const PROJECTS = [
   { 
     title: 'TextUtils Studio', 
     icon: <HiOutlinePencil />, 
-    desc: 'Premium browser-based text manipulation toolkit with a "Deep Cyber Glass" UI offering 100+ formatting, extraction, and cryptography tools.', 
+    desc: 'A feature-rich text manipulation toolkit with a glassmorphism UI offering 100+ formatting, extraction, and cryptography tools.', 
     tech: ['React.js','Bootstrap'], 
     live: 'https://farmanullah1.github.io/TextUtils-React.js/', 
     code: 'https://github.com/farmanullah1/TextUtils-React.js' 
@@ -179,7 +179,7 @@ const PROJECTS = [
   { 
     title: 'Old Portfolio - (2024)', 
     icon: <HiOutlineTerminal />, 
-    desc: 'My 2024 Portfolio Website built with HTML,CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'My 2024 portfolio website showcasing clean code architecture and fully responsive design.', 
     tech: ['HTML', 'CSS', 'JavaScript','Web Basics'], 
     live: 'https://farmanullah1.github.io/Portfolio-2024/', 
     code: 'https://github.com/farmanullah1/Portfolio-2024' 
@@ -286,8 +286,8 @@ const Projects = () => {
                 ))}
               </div>
               <div className="project-links">
-                {proj.live && <a href={proj.live} target="_blank" rel="noreferrer" className="project-link project-link--live"><HiOutlineExternalLink /> Live Demo</a>}
-                {proj.code && <a href={proj.code} target="_blank" rel="noreferrer" className="project-link project-link--code"><SiGithub /> Source Code</a>}
+                {proj.live && <a href={proj.live} target="_blank" rel="noreferrer" className="project-link project-link--live" aria-label={`Live demo of ${proj.title}`}><HiOutlineExternalLink /> Live Demo</a>}
+                {proj.code && <a href={proj.code} target="_blank" rel="noreferrer" className="project-link project-link--code" aria-label={`Source code for ${proj.title}`}><SiGithub /> Source Code</a>}
               </div>
             </motion.div>
           ))}
