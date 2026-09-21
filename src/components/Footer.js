@@ -38,7 +38,7 @@ const Footer = () => (
         <div className="footer-contact-group">
           <h4>Contact</h4>
           <p>farmanullahansari999@gmail.com</p>
-          <p>Sindh, Pakistan</p>
+          <p>Karachi, Sindh, Pakistan</p>
           <p>Open to remote work worldwide</p>
         </div>
       </div>

@@ -10,10 +10,11 @@ import {
   HiOutlineDuplicate, HiOutlineServer, HiOutlinePencil, 
   HiOutlineSun, HiOutlineClipboardList, HiOutlineCurrencyDollar,
   HiOutlineUserGroup, HiOutlineViewGrid, HiOutlineArrowCircleUp,
-  HiOutlineHand, HiOutlineX, HiOutlineShoppingBag, HiOutlineCube
+  HiOutlineHand, HiOutlineX, HiOutlineShoppingBag, HiOutlineCube,
+  HiOutlineSearch
 } from 'react-icons/hi';
 import { IoGameControllerOutline } from 'react-icons/io5';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const PROJECTS = [
@@ -324,8 +325,8 @@ const PROJECTS = [
 const FILTERS = [
   { name: 'All', icon: <FaLayerGroup /> },
   { name: 'Featured', icon: <FaStar /> },
-  { name: 'MERN', icon: <SiMongodb /> },
   { name: 'Full Stack', icon: <FaDatabase /> },
+  { name: 'MERN', icon: <SiMongodb /> },
   { name: 'React.js', icon: <FaReact /> },
   { name: '.NET', icon: <SiDotnet /> },
   { name: 'TypeScript', icon: <SiTypescript /> },
@@ -336,31 +337,72 @@ const FILTERS = [
 ];
 
 const match = (p, f) => {
-  const tech = p.tech.map(t => t.toLowerCase());
-  const title = p.title.toLowerCase();
+  const tech = (p.tech || []).map(t => (t || '').toLowerCase().trim());
+  const title = (p.title || '').toLowerCase();
+  const desc = (p.desc || '').toLowerCase();
   
   if (f === 'All') return true;
-  if (f === 'Featured') return p.featured;
-  if (f === 'MERN') return tech.includes('mongodb');
-  if (f === 'Full Stack') return tech.includes('mongodb') || tech.includes('sql server') || tech.includes('node.js') || tech.includes('express');
-  if (f === 'React.js') return tech.includes('react.js') || tech.includes('react');
-  if (f === '.NET') return tech.includes('c#') || tech.includes('asp.net core') || tech.includes('web api');
-  if (f === 'TypeScript') return tech.includes('typescript');
-  if (f === 'JavaScript') return tech.includes('javascript');
+  if (f === 'Featured') return Boolean(p.featured);
+  if (f === 'MERN') {
+    return tech.includes('mongodb') || title.includes('mern') || desc.includes('mern');
+  }
+  if (f === 'Full Stack') {
+    return tech.includes('mongodb') || tech.includes('sql server') || tech.includes('node.js') || 
+           tech.includes('express') || tech.includes('express.js') || tech.includes('asp.net core') || 
+           tech.includes('asp.net') || tech.includes('dot net') || tech.includes('c#') || 
+           tech.includes('mysql') || tech.includes('php') || title.includes('mern') || title.includes('full stack');
+  }
+  if (f === 'React.js') {
+    return tech.includes('react.js') || tech.includes('react') || tech.includes('reactjs') || title.includes('react');
+  }
+  if (f === '.NET') {
+    return tech.includes('c#') || tech.includes('asp.net core') || tech.includes('asp .net core') || 
+           tech.includes('asp.net') || tech.includes('asp .net') || tech.includes('dot net') || 
+           tech.includes('mvc') || tech.includes('ms sql server') || title.includes('asp.net') || title.includes('.net');
+  }
+  if (f === 'TypeScript') return tech.includes('typescript') || tech.includes('ts');
+  if (f === 'JavaScript') return tech.includes('javascript') || tech.includes('js');
   if (f === 'Games') {
-    const keywords = ['game', 'tetris', 'tic-tac-toe', 'scissors', 'matching', 'snake'];
-    return keywords.some(kw => title.includes(kw));
+    const keywords = ['game', 'racing', 'tetris', 'tic-tac-toe', 'scissors', 'matching', 'snake', 'ludo', 'rush', 'apex'];
+    return keywords.some(kw => title.includes(kw) || desc.includes(kw));
   }
   if (f === 'Tailwind CSS') return tech.includes('tailwind css') || tech.includes('tailwind');
-  if (f === 'Vanilla JS') return (tech.includes('javascript') || tech.includes('js')) && !tech.includes('react.js') && !tech.includes('react') && !tech.includes('typescript');
+  if (f === 'Vanilla JS') {
+    return (tech.includes('javascript') || tech.includes('html') || tech.includes('css')) && 
+           !tech.includes('react.js') && !tech.includes('react') && !tech.includes('reactjs') && 
+           !tech.includes('typescript') && !tech.includes('node.js') && !tech.includes('c#') && !tech.includes('asp.net core');
+  }
   
-  return p.tech.includes(f);
+  return tech.includes(f.toLowerCase());
 };
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
+  const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(8);
-  const filtered = PROJECTS.filter(p => match(p, filter));
+
+  // Pre-calculate project counts per filter
+  const filterCounts = useMemo(() => {
+    const counts = {};
+    FILTERS.forEach(f => {
+      counts[f.name] = PROJECTS.filter(p => match(p, f.name)).length;
+    });
+    return counts;
+  }, []);
+
+  const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return PROJECTS.filter(p => {
+      const matchesCategory = match(p, filter);
+      if (!matchesCategory) return false;
+      if (!q) return true;
+      const titleMatch = (p.title || '').toLowerCase().includes(q);
+      const descMatch = (p.desc || '').toLowerCase().includes(q);
+      const techMatch = (p.tech || []).some(t => (t || '').toLowerCase().includes(q));
+      return titleMatch || descMatch || techMatch;
+    });
+  }, [filter, search]);
+
   const displayed = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
 
@@ -368,59 +410,157 @@ const Projects = () => {
     setVisibleCount(prev => prev + 8);
   };
 
+  const resetFilters = () => {
+    setFilter('All');
+    setSearch('');
+    setVisibleCount(8);
+  };
+
   return (
     <section className="projects" id="projects">
       <motion.h2 initial={{ opacity:0, y:-20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}>
         Featured Projects
       </motion.h2>
-      <div className="filter-container">
-        {FILTERS.map(f => (
-          <motion.button key={f.name} className={`filter-btn${filter===f.name?' active':''}`}
-            onClick={() => {
-              setFilter(f.name);
-              setVisibleCount(8);
-            }} whileHover={{ scale:1.06 }} whileTap={{ scale:.94 }}>
-            <span className="filter-icon">{f.icon}</span>
-            {f.name}
-          </motion.button>
-        ))}
+
+      {/* Projects Count & Statistics Header */}
+      <div className="projects-header-info">
+        <span className="projects-stat-badge">
+          <FaLayerGroup /> <strong>{PROJECTS.length}</strong> Total Projects
+        </span>
+        <span className="projects-stat-badge projects-stat-badge--active">
+          Showing <strong>{displayed.length}</strong> of <strong>{filtered.length}</strong> {filter === 'All' && !search ? 'Projects' : 'Results'}
+        </span>
       </div>
-      <motion.div layout className="project-grid">
-        <AnimatePresence mode="popLayout">
-          {displayed.map(proj => (
-            <motion.div
-              className={`project-card${proj.featured?' project-card--featured':''}`}
-              key={proj.title} layout
-              initial={{ opacity:0, scale:.88 }} animate={{ opacity:1, scale:1 }} exit={{ opacity:0, scale:.88 }}
-              transition={{ duration:.32 }} whileHover={{ y:-9 }}
+
+      {/* Search Input for Projects */}
+      <div className="projects-search-wrap">
+        <HiOutlineSearch className="projects-search-icon" />
+        <input
+          type="text"
+          className="projects-search-input"
+          placeholder="Search projects by title, tech (e.g. React, MERN, C#, Game)..."
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setVisibleCount(8);
+          }}
+          aria-label="Search projects"
+        />
+        {search && (
+          <button
+            type="button"
+            className="projects-search-clear"
+            onClick={() => setSearch('')}
+            aria-label="Clear search"
+          >
+            <HiOutlineX />
+          </button>
+        )}
+      </div>
+
+      {/* Filter Tabs with Live Project Counts */}
+      <div className="filter-container">
+        {FILTERS.map(f => {
+          const count = filterCounts[f.name] || 0;
+          return (
+            <motion.button
+              key={f.name}
+              className={`filter-btn${filter === f.name ? ' active' : ''}`}
+              onClick={() => {
+                setFilter(f.name);
+                setVisibleCount(8);
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {proj.featured && <div className="project-featured-badge"><FaStar /> Featured</div>}
-              <div className="project-icon">{proj.icon}</div>
-              <h3>{proj.title}</h3>
-              <p>{proj.desc}</p>
-              <div className="tech-stack">
-                {proj.tech.map((t,i) => (
-                  <span key={i}>
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <div className="project-links">
-                {proj.live && <a href={proj.live} target="_blank" rel="noreferrer" className="project-link project-link--live"><HiOutlineExternalLink /> Live Demo</a>}
-                {proj.code && <a href={proj.code} target="_blank" rel="noreferrer" className="project-link project-link--code"><SiGithub /> Source Code</a>}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+              <span className="filter-icon">{f.icon}</span>
+              <span>{f.name}</span>
+              <span className="filter-count">{count}</span>
+            </motion.button>
+          );
+        })}
+      </div>
+
+      {/* Empty State */}
+      {filtered.length === 0 ? (
+        <div className="projects-empty">
+          <div className="projects-empty-icon"><HiOutlineSearch /></div>
+          <h3>No matching projects found</h3>
+          <p>
+            No projects match {search ? `"${search}" in ` : ''}the <strong>{filter}</strong> category.
+          </p>
+          <button
+            type="button"
+            className="projects-reset-btn"
+            onClick={resetFilters}
+          >
+            Reset Filters ({PROJECTS.length} Projects)
+          </button>
+        </div>
+      ) : (
+        /* Project Grid */
+        <motion.div layout className="project-grid">
+          <AnimatePresence mode="popLayout">
+            {displayed.map(proj => (
+              <motion.div
+                className={`project-card${proj.featured ? ' project-card--featured' : ''}`}
+                key={proj.title}
+                layout
+                initial={{ opacity: 0, scale: 0.88 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.88 }}
+                transition={{ duration: 0.32 }}
+                whileHover={{ y: -9 }}
+              >
+                {proj.featured && <div className="project-featured-badge"><FaStar /> Featured</div>}
+                <div className="project-icon">{proj.icon}</div>
+                <h3>{proj.title}</h3>
+                <p>{proj.desc}</p>
+                <div className="tech-stack">
+                  {proj.tech.map((t, i) => (
+                    <span key={i}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  {proj.live && (
+                    <a href={proj.live} target="_blank" rel="noreferrer" className="project-link project-link--live">
+                      <HiOutlineExternalLink /> Live Demo
+                    </a>
+                  )}
+                  {proj.code && (
+                    <a href={proj.code} target="_blank" rel="noreferrer" className="project-link project-link--code">
+                      <SiGithub /> Source Code
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      )}
+
+      {/* Pagination / More Button */}
       {hasMore && (
-        <motion.div className="more-button-container" initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:false }}>
-          <motion.button className="more-button" onClick={loadMore} whileHover={{ scale:1.04 }} whileTap={{ scale:.97 }}>
-            More Projects
+        <motion.div className="more-button-container" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }}>
+          <motion.button className="more-button" onClick={loadMore} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+            Show More Projects ({filtered.length - visibleCount} remaining)
           </motion.button>
+          {visibleCount > 8 && (
+            <motion.button
+              className="more-button more-button--secondary"
+              onClick={() => setVisibleCount(8)}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Show Less
+            </motion.button>
+          )}
         </motion.div>
       )}
     </section>
   );
 };
+
 export default Projects;

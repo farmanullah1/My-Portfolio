@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 const EXPERIENCES = [
-  { title:'Web Development Intern', company:'PS CODERS', date:'Jul 2024 – Oct 2024', type:'work',
+{ title: 'Junior Web Developer', company: 'Finosys', date: 'Aug 2026 - Present', type: 'work', bullets: [ 'Develop and maintain responsive web applications using React, JavaScript, Node.js, .NET, C#, and Tailwind CSS.', 'Build and integrate REST APIs, database-driven features, and backend services using Microsoft SQL Server, SQL, and MongoDB.', 'Work with enterprise business systems and workflows involving CRM and SAP, supporting application development and data-driven business processes.', 'Implement application features such as authentication, CRUD operations, API integrations, and email communication using SMTP while following clean and maintainable development practices.' ] },
+  {title: 'Web Developer Intern', company:'PS CODERS', date:'Jul 2024 – Oct 2024', type:'work',
     bullets:['Engineered dynamic and responsive front-end interfaces using modern web technologies.','Collaborated with cross-functional teams to optimise UI/UX and improve overall application performance.','Ensured cross-browser compatibility and adhered to clean code architecture and standard development workflows.'] },
   { title:'Cloud Computing Fellow', company:'ACM UET Lahore', date:'Jun 2024 – Aug 2024', type:'work',
     bullets:['Gained hands-on experience in cloud infrastructure, DevOps practices, and server management.','Deployed scalable web applications leveraging AWS services, including Elastic Beanstalk and EC2.','Implemented containerised environments using Docker, focusing on port mapping, volume mounting, and multi-container NGINX architectures.'] },

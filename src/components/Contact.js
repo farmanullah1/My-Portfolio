@@ -51,7 +51,7 @@ const Contact = () => {
               </motion.a>
             ))}
           </div>
-          <div className="contact-location"><FaMapMarkerAlt /><span>Sindh, Pakistan — Open to remote worldwide</span></div>
+          <div className="contact-location"><FaMapMarkerAlt /><span>Karachi, Sindh, Pakistan — Open to remote worldwide</span></div>
         </motion.div>
 
         <motion.div className="contact-form-wrap"
