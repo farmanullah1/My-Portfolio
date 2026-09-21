@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { FaArrowRight, FaClock } from 'react-icons/fa';
 
 const ARTICLES = [
-  { title:'Deploying Dual NGINX Servers on AWS EC2 with Docker', date:'September 2025', readTime:'8 min read', desc:'A deep dive into container isolation, volume mounting, and static content serving using Docker on an EC2 instance.', tag:'DevOps',   link:'https://www.linkedin.com/in/farmanullah-ansari', color:'#7c3aed' },
-  { title:'The Future of Cashless Bartering in Pakistan',        date:'March 2026',     readTime:'6 min read', desc:'How we built Gadd Kaam using the MERN stack to digitise traditional skill swapping and combat economic inflation.', tag:'MERN Stack',link:'https://www.linkedin.com/in/farmanullah-ansari', color:'#e040fb' },
+  { title:'Deploying Dual NGINX Servers on AWS EC2 with Docker', date:'September 2025', readTime:'8 min read', desc:'A deep dive into container isolation, volume mounting, and static content serving using Docker on an EC2 instance.', tag:'DevOps',   link:'https://www.linkedin.com/in/farmanullah-ansari', color:'var(--c2)' },
+  { title:'The Future of Cashless Bartering in Pakistan',        date:'March 2026',     readTime:'6 min read', desc:'How we built Gadd Kaam using the MERN stack to digitise traditional skill swapping and combat economic inflation.', tag:'MERN Stack',link:'https://www.linkedin.com/in/farmanullah-ansari', color:'var(--c1)' },
 ];
 
 const Blog = () => (

@@ -4,10 +4,10 @@ import { FaCode, FaLaptopCode, FaCloudUploadAlt, FaUserCheck } from 'react-icons
 import cvFile from '../assets/Farmanullah Ansari CV - All.pdf';
 
 const HIGHLIGHTS = [
-  { icon:<FaCode />,           title:'Clean Code',   desc:'Readable, maintainable, and well-structured code is a priority in every project.',                      color:'#e040fb' },
-  { icon:<FaLaptopCode />,     title:'Modern Stack', desc:'Proficient in MERN, ASP.NET Core, and cloud-native technologies for full-stack delivery.',               color:'#00e5ff' },
-  { icon:<FaCloudUploadAlt />, title:'Cloud-Ready',  desc:'Experienced deploying scalable apps on AWS with Docker, CI/CD pipelines, and DevOps practices.',         color:'#00e676' },
-  { icon:<FaUserCheck />,      title:'User-Focused', desc:'Every design decision stems from empathy for users — fast, accessible, and intuitive interfaces.',       color:'#ffab40' },
+  { icon:<FaCode />,           title:'Clean Code',   desc:'Readable, maintainable, and well-structured code is a priority in every project.',                      color:'var(--c1)' },
+  { icon:<FaLaptopCode />,     title:'Modern Stack', desc:'Proficient in MERN, ASP.NET Core, and cloud-native technologies for full-stack delivery.',               color:'var(--c2)' },
+  { icon:<FaCloudUploadAlt />, title:'Cloud-Ready',  desc:'Experienced deploying scalable apps on AWS with Docker, CI/CD pipelines, and DevOps practices.',         color:'var(--c3)' },
+  { icon:<FaUserCheck />,      title:'User-Focused', desc:'Every design decision stems from empathy for users — fast, accessible, and intuitive interfaces.',       color:'var(--c1)' },
 ];
 
 const About = () => (

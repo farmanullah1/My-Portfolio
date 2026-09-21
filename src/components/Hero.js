@@ -35,7 +35,7 @@ const SOCIALS = [
 
 const STATS = [
   { num: '3+',  label: 'Years Coding'   },
-  { num: '10+', label: 'Projects Built' },
+  { num: '30+', label: 'Projects Built' },
   { num: '10+', label: 'Certifications' },
 ];
 

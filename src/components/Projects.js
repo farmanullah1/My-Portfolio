@@ -229,14 +229,14 @@ const PROJECTS = [
     title: 'NexaShop - Full E-Commerce Platform', 
     icon: <HiOutlineArrowCircleUp />, 
     desc: 'Full E-Commerce Platform website.', 
-    tech: ['HTML', 'CSS', 'JavaScript','PHP','MS SQL Server','Dot Net','ASP .Net','Bootstrap','Dot Net MVC','ASP .Net Core','React.js','Redux','Redux Toolkit','React Router','Vite','C#',''], 
+    tech: ['HTML', 'CSS', 'JavaScript','PHP','MS SQL Server','Dot Net','ASP .Net','Bootstrap','Dot Net MVC','ASP .Net Core','React.js','Redux','Redux Toolkit','React Router','Vite','C#'], 
     live: 'https://farmanullah1.github.io/NexaShop-Full-E-Commerce-Platform', 
     code: 'https://github.com/farmanullah1/NexaShop-Full-E-Commerce-Platform' 
   },
   { 
     title: 'ULTRA FIGHTER X', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance ULTRA FIGHTER X app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'An action-packed web fighting game featuring animated combat moves, health bars, combo mechanics, and smooth GSAP animations.', 
     tech: ['HTML', 'CSS', 'JavaScript','GSAP'], 
     live: 'https://farmanullah1.github.io/ULTRA-FIGHTER-X/', 
     code: 'https://github.com/farmanullah1/ULTRA-FIGHTER-X' 
@@ -244,7 +244,7 @@ const PROJECTS = [
   { 
     title: '8 Ball Pool', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance 8 Ball Pool app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'A classic 8 Ball Pool web game featuring accurate ball collision physics, cue stick controls, and full game-state logic.', 
     tech: ['HTML', 'CSS', 'JavaScript','React.js','Node.js','MySQL','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
     live: 'https://farmanullah1.github.io/8-ball-Pool/', 
     code: 'https://github.com/farmanullah1/8-ball-Pool' 
@@ -252,7 +252,7 @@ const PROJECTS = [
   { 
     title: 'Ludo', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance Ludo app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'An interactive digital board game of Ludo with multiplayer turn logic, token movement animations, and dice rolling.', 
     tech: ['HTML', 'CSS', 'JavaScript','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
     live: 'https://farmanullah1.github.io/Ludo/', 
     code: 'https://github.com/farmanullah1/Ludo' 
@@ -260,15 +260,15 @@ const PROJECTS = [
   { 
     title: 'ApexRush-3D-Web-Racing-Game', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance ApexRush-3D-Web-Racing-Game app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'A high-performance 3D web racing game built with Three.js and React, featuring dynamic camera perspectives and responsive physics.', 
     tech: ['HTML', 'CSS', 'JavaScript','Three.js','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
     live: 'https://farmanullah1.github.io/ApexRush-3D-Web-Racing-Game/', 
     code: 'https://github.com/farmanullah1/ApexRush-3D-Web-Racing-Game' 
   },
-    { 
+  { 
     title: '3D-RACING-GAME', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance 3D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'An immersive 3D racing game featuring dynamic tracks, vehicle handling, and responsive controls.', 
     tech: ['HTML', 'CSS', 'JavaScript','Three.js','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
     live: 'https://farmanullah1.github.io/3D-RACING-GAME/', 
     code: 'https://github.com/farmanullah1/3D-RACING-GAME' 
@@ -276,23 +276,23 @@ const PROJECTS = [
   { 
     title: '2D-RACING-GAME', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance 2D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'A fast-paced 2D arcade racing game with obstacle avoidance, smooth collision detection, and score tracking.', 
     tech: ['HTML', 'CSS', 'JavaScript','Three.js','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
     live: 'https://farmanullah1.github.io/2D-RACING-GAME/', 
     code: 'https://github.com/farmanullah1/2D-RACING-GAME' 
   },
-    { 
+  { 
     title: 'Grove AI', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance 2D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'An AI-powered web platform with an interactive user interface, smart generative responses, and responsive design.', 
     tech: ['HTML', 'CSS', 'JavaScript','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
     live: 'https://farmanullah1.github.io/Grove-AI/', 
     code: 'https://github.com/farmanullah1/Grove-AI' 
   },
-      { 
+  { 
     title: 'AirShare', 
     icon: <HiOutlineTerminal />, 
-    desc: 'A high-performance 2D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    desc: 'A seamless, web-based file and media sharing application engineered for fast, lightweight local-network data transfers.', 
     tech: ['HTML', 'CSS', 'JavaScript','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
     live: 'https://farmanullah1.github.io/AirShare/', 
     code: 'https://github.com/farmanullah1/AirShare' 

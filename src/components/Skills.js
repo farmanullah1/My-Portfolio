@@ -25,10 +25,10 @@ const MARQUEE = [
 
 // --cat-color is set inline so CSS can use it for the left border, dot, title, hover
 const CATS = [
-  { title: 'Frontend',          color: '#e040fb', skills: ['React.js','TypeScript','Tailwind CSS','HTML5 / CSS3','Framer Motion'] },
-  { title: 'Backend',           color: '#7c3aed', skills: ['Node.js','Express.js','ASP.NET Core','C#','REST APIs'] },
-  { title: 'Database & Cloud',  color: '#00e5ff', skills: ['MongoDB','SQL Server','AWS EC2 / EB','Docker','Linux'] },
-  { title: 'Tools & Other',     color: '#ffab40', skills: ['Git & GitHub','Power BI','Python','Figma','Postman'] },
+  { title: 'Frontend',          color: 'var(--c1)', skills: ['React.js','TypeScript','Tailwind CSS','HTML5 / CSS3','Framer Motion'] },
+  { title: 'Backend',           color: 'var(--c2)', skills: ['Node.js','Express.js','ASP.NET Core','C#','REST APIs'] },
+  { title: 'Database & Cloud',  color: 'var(--c3)', skills: ['MongoDB','SQL Server','AWS EC2 / EB','Docker','Linux'] },
+  { title: 'Tools & Other',     color: 'var(--c1)', skills: ['Git & GitHub','Power BI','Python','Figma','Postman'] },
 ];
 
 const Skills = () => (
