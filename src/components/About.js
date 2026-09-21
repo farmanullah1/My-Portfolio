@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaLaptopCode, FaCloudUploadAlt, FaUserCheck } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaCloudUploadAlt, FaUserCheck, FaFileAlt, FaDownload } from 'react-icons/fa';
 import cvFile from '../assets/Farmanullah Ansari CV - All.pdf';
 
 const HIGHLIGHTS = [
@@ -33,7 +33,8 @@ const About = () => (
           or writing technical articles to share knowledge with the community.
         </p>
         <div className="about-buttons">
-          <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-primary">Download My CV</a>
+          <a href={cvFile} target="_blank" rel="noreferrer" className="btn-primary"><FaFileAlt /> View CV</a>
+          <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-secondary"><FaDownload /> Download CV</a>
           <a href="#contact" className="btn-secondary">Hire Me</a>
         </div>
       </motion.div>

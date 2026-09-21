@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaMapMarkerAlt, FaPaperPlane, FaCopy, FaCheck } from 'react-icons/fa';
 
 const SOCIALS = [
-  { href:'mailto:farmanullahansari999@gmail.com',           icon:<FaEnvelope />, label:'Email',    text:'farmanullahansari999@gmail.com' },
   { href:'https://www.linkedin.com/in/farmanullah-ansari',  icon:<FaLinkedin />, label:'LinkedIn', text:'linkedin.com/in/farmanullah-ansari' },
   { href:'https://github.com/farmanullah1',                 icon:<FaGithub />,   label:'GitHub',   text:'github.com/farmanullah1' },
   { href:'https://x.com/farmanullah9088',                   icon:<FaTwitter />,  label:'Twitter',  text:'@farmanullah9088' },
 ];
 
 const Contact = () => {
-  const [form, setForm]     = useState({ name:'', email:'', subject:'', message:'' });
-  const [toast, setToast]   = useState(null);
-  const [sending, setSending] = useState(false);
+  const [form, setForm]         = useState({ name:'', email:'', subject:'', message:'' });
+  const [toast, setToast]       = useState(null);
+  const [sending, setSending]   = useState(false);
+  const [copied, setCopied]     = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('farmanullahansari999@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2400);
+  };
 
   const change = e => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -40,8 +46,26 @@ const Contact = () => {
             <p>Whether you have a project idea, a job opportunity, or just want to say hello — my inbox is always open.</p>
           </div>
           <div className="contact-socials">
+            <motion.button
+              type="button"
+              className="contact-social-row contact-email-copy-btn"
+              onClick={copyEmail}
+              whileHover={{ x:7 }}
+              transition={{ type:'spring', stiffness:300 }}
+              aria-label="Copy email address"
+            >
+              <span className="contact-social-icon"><FaEnvelope /></span>
+              <div className="contact-email-text-wrap">
+                <span className="contact-social-label">Email (Click to Copy)</span>
+                <span className="contact-social-text">farmanullahansari999@gmail.com</span>
+              </div>
+              <span className={`copy-badge ${copied ? 'copy-badge--success' : ''}`}>
+                {copied ? <><FaCheck /> Copied!</> : <><FaCopy /> Copy</>}
+              </span>
+            </motion.button>
+
             {SOCIALS.map((s,i) => (
-              <motion.a key={i} href={s.href} target={s.href.startsWith('mailto') ? '_self' : '_blank'} rel="noreferrer"
+              <motion.a key={i} href={s.href} target="_blank" rel="noreferrer"
                 className="contact-social-row" whileHover={{ x:7 }} transition={{ type:'spring', stiffness:300 }}>
                 <span className="contact-social-icon">{s.icon}</span>
                 <div>

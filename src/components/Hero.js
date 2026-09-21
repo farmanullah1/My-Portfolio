@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { 
-  FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaAws, FaMicrosoft, FaChartBar 
+  FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaAws, FaMicrosoft, FaChartBar,
+  FaFileAlt, FaCopy, FaCheck
 } from 'react-icons/fa';
 import { 
   SiReact, SiNodedotjs, SiTypescript, SiDotnet, 
@@ -67,6 +68,13 @@ const Hero = () => {
   const [roleIndex,     setRoleIndex]     = useState(0);
   const [displayedRole, setDisplayedRole] = useState('');
   const [isTyping,      setIsTyping]      = useState(true);
+  const [copied,        setCopied]        = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('farmanullahansari999@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2400);
+  };
 
   const imageRef = useRef(null);
   const mx = useMotionValue(0);
@@ -153,7 +161,19 @@ const Hero = () => {
 
           <motion.div className="hero-actions" variants={item}>
             <a href="#contact" className="btn-primary"><FaEnvelope /> Hire Me</a>
+            <a href={cvFile} target="_blank" rel="noreferrer" className="btn-secondary"><FaFileAlt /> View CV</a>
             <a href={cvFile} download="Farmanullah_Ansari_CV.pdf" className="btn-secondary"><FaDownload /> Download CV</a>
+            <motion.button
+              type="button"
+              className="btn-copy-email"
+              onClick={copyEmail}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              aria-label="Copy email address"
+            >
+              {copied ? <FaCheck className="copy-icon-success" /> : <FaCopy />}
+              <span>{copied ? 'Copied!' : 'Copy Email'}</span>
+            </motion.button>
           </motion.div>
 
           <motion.div className="hero-social" variants={item}>
