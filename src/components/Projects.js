@@ -177,6 +177,126 @@ const PROJECTS = [
     code: 'https://github.com/farmanullah1/Snake-Game' 
   },
   { 
+    title: 'Spotify-Node', 
+    icon: <HiOutlineArrowCircleUp />, 
+    desc: 'A high-performance Spotify app with node.js, emphasizing clean code architecture and responsive controls.', 
+    tech: ['Node.js', 'CSS', 'JavaScript','EJS','reactjs','Vite','Spotify API'], 
+    live: 'https://farmanullah1.github.io/Spotify-Node/', 
+    code: 'https://github.com/farmanullah1/Spotify-node-' 
+  },
+{ 
+    title: 'Insta-Like-App-Node-Complete', 
+    icon: <HiOutlineArrowCircleUp />, 
+    desc: 'A high-performance Instagram-like app with node.js, emphasizing clean code architecture and responsive controls.', 
+    tech: ['Node.js', 'CSS', 'JavaScript','EJS','reactjs','Vite','SQL Server'], 
+    live: 'https://farmanullah1.github.io/Insta-Like-App-Node-Complete/', 
+    code: 'https://github.com/farmanullah1/Insta-Like-App-Node-Complete' 
+  },
+  { 
+    title: 'Trademark Now Pay Later PHP', 
+    icon: <HiOutlineArrowCircleUp />, 
+    desc: 'Now Pay Later app with PHP.', 
+    tech: ['PHP', 'CSS', 'JavaScript','MySQL'], 
+    live: '', 
+    code: 'https://github.com/farmanullah1/trademark-now-pay-later-php' 
+  },
+  { 
+    title: 'Trademark Verification Serivces PHP', 
+    icon: <HiOutlineArrowCircleUp />, 
+    desc: 'Trademark Verification Serivces app with PHP.', 
+    tech: ['PHP', 'CSS', 'JavaScript','MySQL'], 
+    live: '', 
+    code: 'https://github.com/farmanullah1/trademark-verification-serivces' 
+  },
+  { 
+    title: 'Karachi Biennale', 
+    icon: <HiOutlineArrowCircleUp />, 
+    desc: 'Karachi Biennale website.', 
+    tech: ['HTML', 'CSS', 'JavaScript','php'], 
+    live: 'https://farmanullah1.github.io/karachi-biennale', 
+    code: 'https://github.com/farmanullah1/karachi-biennale' 
+  },
+  { 
+    title: 'Markcrest Law', 
+    icon: <HiOutlineArrowCircleUp />, 
+    desc: 'Markcrest Law website.', 
+    tech: ['HTML', 'CSS', 'JavaScript','PHP','MS SQL Server'], 
+    live: 'https://farmanullah1.github.io/markcrest-law', 
+    code: 'https://github.com/farmanullah1/markcrest-law' 
+  },
+  { 
+    title: 'NexaShop - Full E-Commerce Platform', 
+    icon: <HiOutlineArrowCircleUp />, 
+    desc: 'Full E-Commerce Platform website.', 
+    tech: ['HTML', 'CSS', 'JavaScript','PHP','MS SQL Server','Dot Net','ASP .Net','Bootstrap','Dot Net MVC','ASP .Net Core','React.js','Redux','Redux Toolkit','React Router','Vite','C#',''], 
+    live: 'https://farmanullah1.github.io/NexaShop-Full-E-Commerce-Platform', 
+    code: 'https://github.com/farmanullah1/NexaShop-Full-E-Commerce-Platform' 
+  },
+  { 
+    title: 'ULTRA FIGHTER X', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance ULTRA FIGHTER X app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','GSAP'], 
+    live: 'https://farmanullah1.github.io/ULTRA-FIGHTER-X/', 
+    code: 'https://github.com/farmanullah1/ULTRA-FIGHTER-X' 
+  },
+  { 
+    title: '8 Ball Pool', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance 8 Ball Pool app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','React.js','Node.js','MySQL','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
+    live: 'https://farmanullah1.github.io/8-ball-Pool/', 
+    code: 'https://github.com/farmanullah1/8-ball-Pool' 
+  },
+  { 
+    title: 'Ludo', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance Ludo app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
+    live: 'https://farmanullah1.github.io/Ludo/', 
+    code: 'https://github.com/farmanullah1/Ludo' 
+  },
+  { 
+    title: 'ApexRush-3D-Web-Racing-Game', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance ApexRush-3D-Web-Racing-Game app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','Three.js','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
+    live: 'https://farmanullah1.github.io/ApexRush-3D-Web-Racing-Game/', 
+    code: 'https://github.com/farmanullah1/ApexRush-3D-Web-Racing-Game' 
+  },
+    { 
+    title: '3D-RACING-GAME', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance 3D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','Three.js','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
+    live: 'https://farmanullah1.github.io/3D-RACING-GAME/', 
+    code: 'https://github.com/farmanullah1/3D-RACING-GAME' 
+  },
+  { 
+    title: '2D-RACING-GAME', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance 2D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','Three.js','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
+    live: 'https://farmanullah1.github.io/2D-RACING-GAME/', 
+    code: 'https://github.com/farmanullah1/2D-RACING-GAME' 
+  },
+    { 
+    title: 'Grove AI', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance 2D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
+    live: 'https://farmanullah1.github.io/Grove-AI/', 
+    code: 'https://github.com/farmanullah1/Grove-AI' 
+  },
+      { 
+    title: 'AirShare', 
+    icon: <HiOutlineTerminal />, 
+    desc: 'A high-performance 2D-RACING-GAME app with HTML, CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 
+    tech: ['HTML', 'CSS', 'JavaScript','React.js','Vite','Bootstrap','Redux','Redux Toolkit','React Router'], 
+    live: 'https://farmanullah1.github.io/AirShare/', 
+    code: 'https://github.com/farmanullah1/AirShare' 
+  },
+  { 
     title: 'Old Portfolio - (2024)', 
     icon: <HiOutlineTerminal />, 
     desc: 'My 2024 Portfolio Website built with HTML,CSS and JavaScript, emphasizing clean code architecture and responsive controls.', 

@@ -43,5 +43,17 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
+  },
+  "description": "A results-driven Software Engineer with a passion for building high-performance, scalable web applications. Expert in the **MERN stack** and **.NET ecosystem**, with a strong focus on clean architecture, containerization (Docker), and cloud infrastructure (AWS).",
+  "main": "check_icons.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farmanullah1/My-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farmanullah1/My-Portfolio/issues"
   }
 }
