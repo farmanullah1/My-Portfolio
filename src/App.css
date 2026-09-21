@@ -11,45 +11,45 @@
 /* ── 1. DESIGN TOKENS ──────────────────────────────────────── */
 :root {
   /* ─ Backgrounds */
-  --bg:            #05010e;
-  --bg2:           #090117;
-  --bg-card:       rgba(15, 7, 36, 0.68);
-  --bg-card-h:     rgba(22, 11, 50, 0.85);
-  --bg-glass:      rgba(255,255,255,0.035);
-  --navbar-bg:     rgba(5, 1, 14, 0.88);
+  --bg:            #0B0B0D;
+  --bg2:           #121216;
+  --bg-card:       #17171C;
+  --bg-card-h:     #1D1D24;
+  --bg-glass:      rgba(255,255,255,0.04);
+  --navbar-bg:     rgba(11,11,13,0.86);
 
   /* ─ Text */
-  --text:       #f0ecff;
-  --text-muted: #bfb4e0;
-  --text-dim:   #7f72aa;
+  --text:          #F2EFE9;
+  --text-muted:    #B8B2A7;
+  --text-dim:      #7C766C;
 
   /* ─ Borders */
-  --border:      rgba(255,255,255,0.065);
-  --border-glow: rgba(170,100,255,0.45);
+  --border:        rgba(255,255,255,0.08);
+  --border-glow:   rgba(255,90,54,0.35);
 
-  /* ─ Seven vivid accent colours */
-  --c1: #e040fb;   /* magenta-pink   */
-  --c2: #7c3aed;   /* violet         */
-  --c3: #00e5ff;   /* electric cyan  */
-  --c4: #00e676;   /* neon green     */
-  --c5: #ffab40;   /* amber          */
-  --c6: #ff4081;   /* hot rose       */
-  --c7: #40c4ff;   /* sky blue       */
+  /* ─ Accent colours */
+  --c1: #FF5A36;   /* vermilion — primary accent */
+  --c2: #2A9D8F;   /* muted teal — secondary accent */
+  --c3: #E9C46A;   /* sand — rare highlight */
+  --c4: #FF5A36;
+  --c5: #E9C46A;
+  --c6: #2A9D8F;
+  --c7: #FF5A36;
 
   /* ─ Gradients */
-  --grad:       linear-gradient(135deg, var(--c1), var(--c2));
-  --grad-tri:   linear-gradient(135deg, var(--c1), var(--c2), var(--c3));
-  --grad-warm:  linear-gradient(135deg, var(--c5), var(--c6), var(--c1));
-  --grad-cool:  linear-gradient(135deg, var(--c3), var(--c4));
-  --grad-ghost: linear-gradient(135deg, rgba(224,64,251,.12), rgba(124,58,237,.12), rgba(0,229,255,.08));
+  --grad:      linear-gradient(135deg, #FF5A36, #E76F51);
+  --grad-tri:  linear-gradient(135deg, #FF5A36, #2A9D8F);
+  --grad-warm: linear-gradient(135deg, #E9C46A, #FF5A36);
+  --grad-cool: linear-gradient(135deg, #2A9D8F, #264653);
+  --grad-ghost: linear-gradient(135deg, rgba(255,90,54,.12), rgba(42,157,143,.12), rgba(233,196,106,.08));
 
   /* ─ Glows */
-  --glow1: rgba(224,64,251,0.5);
-  --glow2: rgba(124,58,237,0.5);
-  --glow3: rgba(0,229,255,0.45);
-  --glow4: rgba(0,230,118,0.4);
-  --glow5: rgba(255,171,64,0.45);
-  --glow6: rgba(255,64,129,0.45);
+  --glow1: rgba(255,90,54,0.25);
+  --glow2: rgba(42,157,143,0.22);
+  --glow3: rgba(233,196,106,0.18);
+  --glow4: rgba(255,90,54,0.25);
+  --glow5: rgba(233,196,106,0.18);
+  --glow6: rgba(42,157,143,0.22);
 
   /* ─ Layout */
   --r:   18px;
@@ -61,20 +61,40 @@
 
 /* ── LIGHT THEME TOKENS ─────────────────────────────────────── */
 body.light {
-  --bg:        #faf5ff;
-  --bg2:       #f0e6ff;
-  --bg-card:   rgba(255,255,255,0.82);
-  --bg-card-h: rgba(255,255,255,0.97);
+  --bg:        #F6F3EE;
+  --bg2:       #EDE8E0;
+  --bg-card:   #FFFFFF;
+  --bg-card-h: #FFFFFF;
   --bg-glass:  rgba(0,0,0,0.03);
-  --navbar-bg: rgba(250,245,255,0.92);
-  --text:       #150933;
-  --text-muted: #4a2e7c;
-  --text-dim:   #7b55a8;
-  --border:     rgba(124,58,237,0.1);
-  --border-glow:rgba(124,58,237,0.4);
-  --glow1: rgba(224,64,251,0.22);
-  --glow2: rgba(124,58,237,0.22);
-  --glow3: rgba(0,200,230,0.2);
+  --navbar-bg: rgba(246,243,238,0.9);
+
+  --text:       #161513;
+  --text-muted: #5F5A52;
+  --text-dim:   #8B847A;
+
+  --border:      rgba(22,21,19,0.1);
+  --border-glow: rgba(29,78,216,0.3);
+
+  --c1: #1D4ED8; /* cobalt */
+  --c2: #C2410C; /* burnt orange */
+  --c3: #0D9488; /* teal */
+  --c4: #1D4ED8;
+  --c5: #D97706; /* amber */
+  --c6: #C2410C;
+  --c7: #1D4ED8;
+
+  --grad:       linear-gradient(135deg, #1D4ED8, #3B82F6);
+  --grad-tri:   linear-gradient(135deg, #1D4ED8, #C2410C);
+  --grad-warm:  linear-gradient(135deg, #D97706, #C2410C);
+  --grad-cool:  linear-gradient(135deg, #1D4ED8, #0D9488);
+  --grad-ghost: linear-gradient(135deg, rgba(29,78,216,.08), rgba(194,65,12,.08), rgba(13,148,136,.06));
+
+  --glow1: rgba(29,78,216,0.22);
+  --glow2: rgba(194,65,12,0.22);
+  --glow3: rgba(13,148,136,0.2);
+  --glow4: rgba(29,78,216,0.2);
+  --glow5: rgba(217,119,6,0.18);
+  --glow6: rgba(194,65,12,0.2);
 }
 
 /* ── 2. RESET & BASE ───────────────────────────────────────── */
