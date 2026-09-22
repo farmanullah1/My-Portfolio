@@ -20,9 +20,8 @@ const ROLES = [
   'Docker & Containerization Specialist',
   'Data Analyst & Power BI Developer',
   'Software Engineer',
-  // New Additions:
   'Backend API Architect',
-  'Frontend Specialist (React)',
+  'Frontend Specialist',
   'Cloud Infrastructure Engineer',
   'Cross-Platform Solutions Developer',
   'Open Source Contributor',
