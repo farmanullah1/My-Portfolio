@@ -39,7 +39,7 @@ const Footer = () => (
           <h4>Contact</h4>
           <p>farmanullahansari999@gmail.com</p>
           <p>Karachi, Sindh, Pakistan</p>
-          <p>Open to remote work worldwide</p>
+          <p>Open to work worldwide</p>
         </div>
       </div>
       <div className="footer-bottom">
