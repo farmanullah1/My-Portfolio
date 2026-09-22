@@ -39,7 +39,6 @@ const STATS = [
   { num: '10+', label: 'Certifications' },
 ];
 
-/* Enhanced float badges — cleaner labels, better orbital positions */
 const FLOAT_BADGES = [
   { text: 'React.js',      icon: <SiReact color="#61DAFB" />,      cls: 'fb--1',  dy: [-12, 0, -12], dur: 3.0 },
   { text: 'Node.js',       icon: <SiNodedotjs color="#339933" />,  cls: 'fb--2',  dy: [-9,  0,  -9], dur: 3.8 },
@@ -187,7 +186,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT — tilt card */}
         <motion.div className="hero-image-container"
           initial={{ opacity: 0, scale: 0.5, x: 70 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -215,7 +213,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll cue */}
       <motion.div className="hero-scroll-cue" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>
         <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}>
           <div className="scroll-mouse"><div className="scroll-wheel" /></div>
